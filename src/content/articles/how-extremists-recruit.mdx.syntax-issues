@@ -1,8 +1,9 @@
 ---
 title: "How Extremists Recruit: Inside the Playbook (Tactics Exposed, 2025)"
 description: "Investigative exposé revealing the psychological manipulation tactics, grooming stages, and recruitment strategies used by extremist groups across ideologies—online and offline."
-publishDate: 2025-01-15
+publishedDate: 2025-01-15
 author: "Interfaith Peace Research Team"
+category: "counter-extremism"
 tags: ["Counter-Extremism", "Radicalization", "Recruitment", "Prevention"]
 keywords: ["how extremists recruit", "extremist recruitment tactics", "radicalization process", "grooming stages extremism", "online radicalization", "cult recruitment", "preventing radicalization", "warning signs radicalization", "extremist manipulation", "recruitment playbook"]
 targetKeyword: "how extremists recruit"
@@ -144,61 +145,59 @@ import RelatedArticles from '../../components/RelatedArticles.astro'
 
 **Extremists don't need to find you—YouTube/Facebook algorithms deliver you.**
 
-<TacticBreakdown
-  tactic="Keyword Targeting"
-  description="Extremists optimize content for search terms vulnerable people use"
+<TacticBreakdown tactic="Keyword Targeting" description="Extremists optimize content for search terms vulnerable people use">
 
-  **How it works:**
+**How it works:**
 
-  **Step 1: Identify vulnerability keywords**
-  - **Identity crisis**: "Am I a real Muslim?", "What is true Islam?"
-  - **Grievance**: "Why do they hate us?", "Palestine suffering"
-  - **Purpose-seeking**: "Meaning of life", "How to serve God"
-  - **Conspiracy**: "Media lies", "What they don't want you to know"
+**Step 1: Identify vulnerability keywords**
+- **Identity crisis**: "Am I a real Muslim?", "What is true Islam?"
+- **Grievance**: "Why do they hate us?", "Palestine suffering"
+- **Purpose-seeking**: "Meaning of life", "How to serve God"
+- **Conspiracy**: "Media lies", "What they don't want you to know"
 
-  **Step 2: Create gateway content**
-  - Title: "What the Media Won't Tell You About Palestine" (grievance keyword)
-  - Content: 90% factual (Israeli settlements, civilian casualties), 10% extremist spin
-  - Appears reasonable, citable, "just asking questions"
+**Step 2: Create gateway content**
+- Title: "What the Media Won't Tell You About Palestine" (grievance keyword)
+- Content: 90% factual (Israeli settlements, civilian casualties), 10% extremist spin
+- Appears reasonable, citable, "just asking questions"
 
-  **Step 3: Algorithm recommends next video**
-  - Viewer watches Palestine video
-  - YouTube recommends: "The War on Islam" (more extreme)
-  - Then: "Your Duty to Defend the Ummah" (even more extreme)
-  - Then: "Martyrdom is Highest Honor" (explicit extremism)
+**Step 3: Algorithm recommends next video**
+- Viewer watches Palestine video
+- YouTube recommends: "The War on Islam" (more extreme)
+- Then: "Your Duty to Defend the Ummah" (even more extreme)
+- Then: "Martyrdom is Highest Honor" (explicit extremism)
 
-  **Result:** Person radicalized without ever searching for extremist content
+**Result:** Person radicalized without ever searching for extremist content
 
-  evidence="Guillaume Chaslot (former YouTube engineer): 'The algorithm optimizes for watch time. Extreme content keeps people watching. So it recommends extreme content.' - 2019 interview"
-/>
+**Evidence:** Guillaume Chaslot (former YouTube engineer): "The algorithm optimizes for watch time. Extreme content keeps people watching. So it recommends extreme content." - 2019 interview
+
+</TacticBreakdown>
 
 **Real data:**
 
-<CaseStudy
-  title="How YouTube Radicalized 1,000+ ISIS Recruits (Data Analysis)"
-  context="Analysis of 1,248 Western ISIS recruits' browsing history"
+<CaseStudy title="How YouTube Radicalized 1,000+ ISIS Recruits (Data Analysis)" context="Analysis of 1,248 Western ISIS recruits' browsing history">
 
-  **Findings:**
+**Findings:**
 
-  **Common entry points:**
-  1. **News videos** about Syria/Palestine (68%)
-  2. **Islamic lecture series** (non-extremist scholars) (54%)
-  3. **Conspiracy theories** (9/11, Illuminati) (43%)
-  4. **Gaming/entertainment** channels (32%)
+**Common entry points:**
+1. **News videos** about Syria/Palestine (68%)
+2. **Islamic lecture series** (non-extremist scholars) (54%)
+3. **Conspiracy theories** (9/11, Illuminati) (43%)
+4. **Gaming/entertainment** channels (32%)
 
-  **Algorithmic escalation pattern:**
-  1. **Week 1-2**: Watch BBC Syria coverage
-  2. **Week 3-4**: Recommendations shift to graphic Syrian violence compilations
-  3. **Week 5-8**: Al-Jazeera → Islamic lectures → Anwar al-Awlaki (extremist preacher)
-  4. **Week 9-12**: Explicit ISIS propaganda (nasheed music, battle footage)
-  5. **Week 13+**: Direct messages from recruiters in video comments
+**Algorithmic escalation pattern:**
+1. **Week 1-2**: Watch BBC Syria coverage
+2. **Week 3-4**: Recommendations shift to graphic Syrian violence compilations
+3. **Week 5-8**: Al-Jazeera → Islamic lectures → Anwar al-Awlaki (extremist preacher)
+4. **Week 9-12**: Explicit ISIS propaganda (nasheed music, battle footage)
+5. **Week 13+**: Direct messages from recruiters in video comments
 
-  **Average time from first extremist video to ISIS contact:** **78 days**
+**Average time from first extremist video to ISIS contact:** **78 days**
 
-  **Key tactic:** Gradually escalate—don't start with beheading videos.
+**Key tactic:** Gradually escalate—don't start with beheading videos.
 
-  source="Conway et al., 'Disrupting Daesh: Measuring Takedown of Online Terrorist Material', VOX-Pol, 2019"
-/>
+**Source:** Conway et al., "Disrupting Daesh: Measuring Takedown of Online Terrorist Material", VOX-Pol, 2019
+
+</CaseStudy>
 
 ### Offline Targeting: The Personal Touch
 
