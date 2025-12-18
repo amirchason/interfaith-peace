@@ -17,6 +17,7 @@
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@google/generative-ai": "^0.24.1",
     "@sanity/client": "^7.13.2",
     "@supabase/supabase-js": "^2.87.3",
     "astro": "^5.16.6",

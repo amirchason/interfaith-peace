@@ -7,161 +7,214 @@ const meta = {
   description: 'Exploring universal teachings of peace across Christianity, Islam, Buddhism, Hinduism, and Judaism. Discover wisdom from sacred texts, scholars, and peace advocates.',
   religion: 'interfaith' as const
 };
+
+const religions = [
+  {
+    name: 'Christianity',
+    slug: 'christianity',
+    title: 'Blessed Are the Peacemakers',
+    description: '"Love your enemies and pray for those who persecute you" — Jesus\'s radical teachings on peace and forgiveness.',
+    image: '/images/religions/christianity-peace.svg',
+    color: '#4A90E2'
+  },
+  {
+    name: 'Islam',
+    slug: 'islam',
+    title: 'Incline to Peace',
+    description: '"If they incline to peace, incline to it" — The Quran\'s emphasis on reconciliation and ending conflict.',
+    image: '/images/religions/islam-peace.svg',
+    color: '#2ECC71'
+  },
+  {
+    name: 'Buddhism',
+    slug: 'buddhism',
+    title: 'Loving-Kindness (Metta)',
+    description: '"Hatred never ceases by hatred, but by love alone" — Buddhist practices of compassion for all beings.',
+    image: '/images/religions/buddhism-peace.svg',
+    color: '#9B59B6'
+  },
+  {
+    name: 'Hinduism',
+    slug: 'hinduism',
+    title: 'Ahimsa (Non-Violence)',
+    description: '"Cause no injury to any living being in deeds, words, or thoughts" — The foundational principle of non-harm.',
+    image: '/images/religions/hinduism-peace.svg',
+    color: '#F39C12'
+  },
+  {
+    name: 'Judaism',
+    slug: 'judaism',
+    title: 'Tikkun Olam',
+    description: '"Repair the world" — The Jewish call to social action and building a more just, peaceful society.',
+    image: '/images/religions/judaism-peace.svg',
+    color: '#3498DB'
+  }
+];
 ---
 
 <BaseLayout {...meta}>
   <div class="min-h-screen">
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-interfaith-light to-interfaith py-20">
-      <div class="container">
-        <div class="max-w-4xl mx-auto text-center text-white">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6">
-            Peace Across Faiths
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 opacity-90">
-            Discovering the universal language of peace through the wisdom of five great religions
-          </p>
-          <div class="flex flex-wrap justify-center gap-3 mb-10">
-            <span class="religion-badge" data-religion="christianity">Christianity</span>
-            <span class="religion-badge" data-religion="islam">Islam</span>
-            <span class="religion-badge" data-religion="hinduism">Hinduism</span>
-            <span class="religion-badge" data-religion="buddhism">Buddhism</span>
-            <span class="religion-badge" data-religion="judaism">Judaism</span>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/teachings" class="btn bg-white text-interfaith hover:bg-gray-100">
-              Explore Teachings
-            </a>
-            <a href="/about" class="btn bg-interfaith-dark text-white hover:bg-opacity-90">
-              Our Mission
-            </a>
+    <!-- Hero Section with Stunning Visual -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="/images/hero/hero-interfaith-peace.svg"
+          alt="Interfaith Peace"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="relative bg-gradient-to-br from-interfaith/90 to-interfaith-dark/90 py-32 md:py-40">
+        <div class="container">
+          <div class="max-w-5xl mx-auto text-center text-white">
+            <div class="mb-8 animate-fade-in-up">
+              <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 drop-shadow-2xl leading-tight">
+                Peace Across <span class="text-transparent bg-clip-text bg-gradient-to-r from-christianity-light via-islam-light to-buddhism-light">Faiths</span>
+              </h1>
+              <p class="text-xl md:text-3xl mb-10 opacity-95 drop-shadow-lg font-light max-w-3xl mx-auto">
+                Discovering the universal language of peace through the wisdom of five great religions
+              </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+              <span class="religion-badge bg-christianity/90 backdrop-blur-sm hover:bg-christianity transition-all hover:scale-110 cursor-pointer">Christianity</span>
+              <span class="religion-badge bg-islam/90 backdrop-blur-sm hover:bg-islam transition-all hover:scale-110 cursor-pointer">Islam</span>
+              <span class="religion-badge bg-hinduism/90 backdrop-blur-sm hover:bg-hinduism transition-all hover:scale-110 cursor-pointer">Hinduism</span>
+              <span class="religion-badge bg-buddhism/90 backdrop-blur-sm hover:bg-buddhism transition-all hover:scale-110 cursor-pointer">Buddhism</span>
+              <span class="religion-badge bg-judaism/90 backdrop-blur-sm hover:bg-judaism transition-all hover:scale-110 cursor-pointer">Judaism</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+              <a href="/teachings" class="btn bg-white text-interfaith-dark hover:bg-opacity-95 hover:scale-105 transition-all shadow-2xl text-lg px-8 py-4">
+                🕊️ Explore Teachings
+              </a>
+              <a href="#religions" class="btn bg-interfaith-dark/50 backdrop-blur-sm text-white hover:bg-interfaith-dark transition-all border-2 border-white/50 hover:scale-105 text-lg px-8 py-4">
+                📚 Discover Peace Wisdom
+              </a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent"></div>
     </section>
 
-    <!-- Featured Religions -->
-    <section class="py-16 bg-bg-secondary">
+    <!-- Featured Religions with Stunning Visual Cards -->
+    <section id="religions" class="py-20 bg-bg-primary">
       <div class="container">
-        <h2 class="text-4xl font-bold text-center mb-12">
-          Universal Wisdom on Peace
-        </h2>
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-interfaith via-interfaith-dark to-interfaith">
+            Universal Wisdom on Peace
+          </h2>
+          <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+            Every tradition speaks of peace, compassion, and justice in its own profound way
+          </p>
+        </div>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Christianity -->
-          <div class="card hover:scale-105 transition-transform">
-            <div class="mb-4">
-              <span class="religion-badge" data-religion="christianity">Christianity</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Blessed Are the Peacemakers</h3>
-            <p class="text-text-secondary mb-4">
-              "Love your enemies and pray for those who persecute you" — Jesus's radical teachings on peace and forgiveness.
-            </p>
-            <a href="/teachings/christianity" class="text-christianity hover:underline font-semibold">
-              Explore Christian Peace Teachings →
-            </a>
-          </div>
+          {religions.map((religion) => (
+            <article class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div class="absolute inset-0 bg-gradient-to-br opacity-95 transition-opacity group-hover:opacity-100" style={`background: linear-gradient(135deg, ${religion.color}dd, ${religion.color}99)`}></div>
 
-          <!-- Islam -->
-          <div class="card hover:scale-105 transition-transform">
-            <div class="mb-4">
-              <span class="religion-badge" data-religion="islam">Islam</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Incline to Peace</h3>
-            <p class="text-text-secondary mb-4">
-              "If they incline to peace, incline to it" — The Quran's emphasis on reconciliation and ending conflict.
-            </p>
-            <a href="/teachings/islam" class="text-islam hover:underline font-semibold">
-              Explore Islamic Peace Teachings →
-            </a>
-          </div>
+              <div class="relative">
+                <div class="aspect-video overflow-hidden">
+                  <img
+                    src={religion.image}
+                    alt={religion.name}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
 
-          <!-- Buddhism -->
-          <div class="card hover:scale-105 transition-transform">
-            <div class="mb-4">
-              <span class="religion-badge" data-religion="buddhism">Buddhism</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Loving-Kindness (Metta)</h3>
-            <p class="text-text-secondary mb-4">
-              "Hatred never ceases by hatred, but by love alone" — Buddhist practices of compassion for all beings.
-            </p>
-            <a href="/teachings/buddhism" class="text-buddhism hover:underline font-semibold">
-              Explore Buddhist Peace Teachings →
-            </a>
-          </div>
+                <div class="p-8 text-white">
+                  <div class="mb-4">
+                    <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold">
+                      {religion.name}
+                    </span>
+                  </div>
 
-          <!-- Hinduism -->
-          <div class="card hover:scale-105 transition-transform">
-            <div class="mb-4">
-              <span class="religion-badge" data-religion="hinduism">Hinduism</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Ahimsa (Non-Violence)</h3>
-            <p class="text-text-secondary mb-4">
-              "Cause no injury to any living being in deeds, words, or thoughts" — The foundational principle of non-harm.
-            </p>
-            <a href="/teachings/hinduism" class="text-hinduism hover:underline font-semibold">
-              Explore Hindu Peace Teachings →
-            </a>
-          </div>
+                  <h3 class="text-3xl font-bold mb-4 drop-shadow-lg">
+                    {religion.title}
+                  </h3>
 
-          <!-- Judaism -->
-          <div class="card hover:scale-105 transition-transform">
-            <div class="mb-4">
-              <span class="religion-badge" data-religion="judaism">Judaism</span>
-            </div>
-            <h3 class="text-2xl font-bold mb-3">Tikkun Olam</h3>
-            <p class="text-text-secondary mb-4">
-              "Repair the world" — The Jewish call to social action and building a more just, peaceful society.
-            </p>
-            <a href="/teachings/judaism" class="text-judaism hover:underline font-semibold">
-              Explore Jewish Peace Teachings →
-            </a>
-          </div>
+                  <p class="text-white/90 mb-6 text-lg leading-relaxed">
+                    {religion.description}
+                  </p>
 
-          <!-- Interfaith -->
-          <div class="card hover:scale-105 transition-transform bg-interfaith-light bg-opacity-10">
-            <div class="mb-4">
-              <span class="religion-badge" data-religion="interfaith">Interfaith</span>
+                  <a
+                    href={`/teachings/${religion.slug}`}
+                    class="inline-flex items-center gap-2 font-semibold text-white hover:gap-4 transition-all group/link"
+                  >
+                    <span>Explore {religion.name} Peace Teachings</span>
+                    <span class="transition-transform group-hover/link:translate-x-1">→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+
+          <!-- Interfaith Card -->
+          <article class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-interfaith-dark/95 to-interfaith/95 transition-opacity group-hover:opacity-100"></div>
+
+            <div class="relative p-8 h-full flex flex-col justify-center text-white">
+              <div class="mb-6">
+                <div class="text-6xl mb-4">🤝</div>
+                <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold">
+                  Interfaith
+                </span>
+              </div>
+
+              <h3 class="text-3xl font-bold mb-4">
+                Shared Wisdom
+              </h3>
+
+              <p class="text-white/90 mb-6 text-lg">
+                Discover the common threads of peace, compassion, and justice that unite all faiths in their call for a better world.
+              </p>
+
+              <a
+                href="/teachings"
+                class="inline-flex items-center gap-2 font-semibold text-white hover:gap-4 transition-all group/link"
+              >
+                <span>Compare Peace Teachings</span>
+                <span class="transition-transform group-hover/link:translate-x-1">→</span>
+              </a>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Shared Wisdom</h3>
-            <p class="text-text-secondary mb-4">
-              Discover the common threads of peace, compassion, and justice that unite all faiths.
-            </p>
-            <a href="/teachings/interfaith" class="text-interfaith hover:underline font-semibold">
-              Compare Peace Teachings →
-            </a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="py-16">
+    <!-- Mission Section with Icons -->
+    <section class="py-20 bg-gradient-to-br from-bg-secondary to-bg-tertiary">
       <div class="container">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-4xl font-bold mb-6">Our Mission</h2>
-          <p class="text-xl text-text-secondary mb-8">
-            We believe that understanding the peace teachings of different religions can help bridge divides,
-            foster compassion, and inspire action toward a more harmonious world.
-          </p>
-          <div class="grid md:grid-cols-3 gap-6 text-center">
-            <div>
-              <div class="text-5xl mb-3">📚</div>
-              <h3 class="font-bold mb-2">Scholarly Rigor</h3>
-              <p class="text-text-secondary text-sm">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold mb-6">Our Mission</h2>
+            <p class="text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+              Understanding the peace teachings of different religions can bridge divides, foster compassion, and inspire action toward a more harmonious world.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-10">
+            <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div class="text-7xl mb-6">📚</div>
+              <h3 class="text-2xl font-bold mb-4">Scholarly Rigor</h3>
+              <p class="text-text-secondary text-lg leading-relaxed">
                 All teachings reviewed by scholars and experts from each tradition
               </p>
             </div>
-            <div>
-              <div class="text-5xl mb-3">🤝</div>
-              <h3 class="font-bold mb-2">Interfaith Dialogue</h3>
-              <p class="text-text-secondary text-sm">
+
+            <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div class="text-7xl mb-6">🤝</div>
+              <h3 class="text-2xl font-bold mb-4">Interfaith Dialogue</h3>
+              <p class="text-text-secondary text-lg leading-relaxed">
                 Building bridges through respectful comparison and understanding
               </p>
             </div>
-            <div>
-              <div class="text-5xl mb-3">🕊️</div>
-              <h3 class="font-bold mb-2">Practical Peace</h3>
-              <p class="text-text-secondary text-sm">
+
+            <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <div class="text-7xl mb-6">🕊️</div>
+              <h3 class="text-2xl font-bold mb-4">Practical Peace</h3>
+              <p class="text-text-secondary text-lg leading-relaxed">
                 Connecting ancient wisdom to modern peacebuilding efforts
               </p>
             </div>
@@ -171,25 +224,45 @@ const meta = {
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-bg-secondary">
+    <section class="py-20 bg-gradient-to-br from-interfaith to-interfaith-dark text-white">
       <div class="container">
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-4">Stay Connected</h2>
-          <p class="text-text-secondary mb-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Stay Connected</h2>
+          <p class="text-xl mb-10 opacity-90">
             Receive weekly insights on peace teachings from all traditions
           </p>
-          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
             <input
               type="email"
               placeholder="Enter your email"
-              class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-interfaith"
+              class="flex-1 px-6 py-4 rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-lg"
             />
-            <button type="submit" class="btn-primary whitespace-nowrap">
+            <button type="submit" class="px-8 py-4 bg-white text-interfaith-dark font-bold rounded-xl hover:bg-opacity-90 transition-all hover:scale-105 shadow-2xl text-lg whitespace-nowrap">
               Subscribe
             </button>
           </form>
+          <p class="mt-6 text-sm opacity-75">
+            🔒 We respect your privacy. Unsubscribe anytime.
+          </p>
         </div>
       </div>
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out;
+  }
+</style>

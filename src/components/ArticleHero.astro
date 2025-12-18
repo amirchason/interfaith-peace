@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  imageSrc: string;
+  religion?: 'christianity' | 'islam' | 'hinduism' | 'buddhism' | 'judaism' | 'interfaith';
+}
+
+const { title, subtitle, imageSrc, religion = 'interfaith' } = Astro.props;
+
+const religionColors = {
+  christianity: { bg: 'from-christianity-dark to-christianity', text: 'text-christianity' },
+  islam: { bg: 'from-islam-dark to-islam', text: 'text-islam' },
+  hinduism: { bg: 'from-hinduism-dark to-hinduism', text: 'text-hinduism' },
+  buddhism: { bg: 'from-buddhism-dark to-buddhism', text: 'text-buddhism' },
+  judaism: { bg: 'from-judaism-dark to-judaism', text: 'text-judaism' },
+  interfaith: { bg: 'from-interfaith-dark to-interfaith', text: 'text-interfaith' },
+};
+
+const colors = religionColors[religion];
+---
+
+<div class={`relative overflow-hidden rounded-2xl shadow-2xl mb-12 ${colors.bg} bg-gradient-to-br`}>
+  <div class="absolute inset-0">
+    <img
+      src={imageSrc}
+      alt={title}
+      class="w-full h-full object-cover opacity-30 mix-blend-overlay"
+      loading="eager"
+    />
+  </div>
+  <div class="relative px-8 py-24 md:py-32">
+    <div class="max-w-4xl mx-auto text-center text-white">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
+        {title}
+      </h1>
+      {subtitle && (
+        <p class="text-xl md:text-2xl opacity-95 drop-shadow-md font-light">
+          {subtitle}
+        </p>
+      )}
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent"></div>
+</div>
+
+<style>
+  img {
+    animation: subtle-zoom 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes subtle-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+  }
+</style>
