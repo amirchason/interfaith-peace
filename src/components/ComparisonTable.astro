@@ -1,15 +1,27 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   headers: string[];
-  rows: string[][];
+  rows: any[];
 }
 
-const { title, headers, rows } = Astro.props;
+const { title, headers, rows = [] } = Astro.props;
+
+// Handle both array of arrays and array of objects
+const normalizedRows = rows.map(row => {
+  if (Array.isArray(row)) {
+    // Already an array - use as is
+    return row;
+  } else if (typeof row === 'object' && row !== null) {
+    // Object - extract values based on first object's keys
+    return Object.values(row);
+  }
+  return [row]; // Fallback for primitive values
+});
 ---
 
 <div class="my-8 overflow-x-auto">
-  <h3 class="text-xl font-bold mb-4">{title}</h3>
+  {title && <h3 class="text-xl font-bold mb-4">{title}</h3>}
   <table class="min-w-full bg-white border border-gray-300">
     <thead class="bg-gray-100">
       <tr>
@@ -21,7 +33,7 @@ const { title, headers, rows } = Astro.props;
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
-      {rows.map(row => (
+      {normalizedRows.map(row => (
         <tr class="hover:bg-gray-50">
           {row.map(cell => (
             <td class="px-6 py-4 text-sm text-gray-900 border-b">
