@@ -1,0 +1,437 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { Religion } from '../../types';
+
+// Get all teachings
+const allTeachings = await getCollection('teachings');
+
+// Sort by published date (newest first)
+const teachings = allTeachings.sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+);
+
+// Get unique religions
+const religions: Religion[] = ['christianity', 'islam', 'buddhism', 'hinduism', 'judaism', 'interfaith'];
+
+// Get all unique tags
+const allTags = new Set<string>();
+teachings.forEach(teaching => {
+  teaching.data.tags?.forEach(tag => allTags.add(tag));
+});
+const tags = Array.from(allTags).sort();
+
+// Helper functions
+function getReligionColor(religion: Religion): string {
+  const colors = {
+    christianity: '#4A90E2',
+    islam: '#2ECC71',
+    buddhism: '#9B59B6',
+    hinduism: '#F39C12',
+    judaism: '#3498DB',
+    interfaith: '#95A5A6'
+  };
+  return colors[religion] || colors.interfaith;
+}
+
+function getReligionName(religion: Religion): string {
+  return religion.charAt(0).toUpperCase() + religion.slice(1);
+}
+
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  }).format(date);
+}
+
+const meta = {
+  title: 'Peace Teachings from Five World Religions',
+  description: 'Explore sacred teachings on peace, compassion, and non-violence from Christianity, Islam, Buddhism, Hinduism, and Judaism. Scholarly articles with original texts, translations, and interfaith perspectives.',
+  religion: 'interfaith' as Religion
+};
+---
+
+<BaseLayout {...meta}>
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-br from-interfaith-light to-interfaith py-16 px-4">
+    <div class="container mx-auto max-w-6xl text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+        Sacred Teachings on Peace
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+        Discover timeless wisdom from five world religions on compassion, reconciliation, and non-violence
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {religions.map(religion => (
+          <button
+            data-filter-religion={religion}
+            class="filter-btn religion-filter px-4 py-2 rounded-full text-white font-semibold transition-all hover:scale-105"
+            style={`background-color: ${getReligionColor(religion)};`}
+          >
+            {getReligionName(religion)}
+          </button>
+        ))}
+        <button
+          data-filter-religion="all"
+          class="filter-btn religion-filter active px-4 py-2 rounded-full bg-white text-text-primary font-semibold transition-all hover:scale-105"
+        >
+          All Religions
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters & Search Section -->
+  <section class="filters-section bg-white border-b border-bg-secondary py-8 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+        <!-- Search Box -->
+        <div class="w-full md:w-1/2">
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search teachings..."
+            class="w-full px-4 py-3 border border-bg-secondary rounded-lg focus:outline-none focus:border-interfaith transition-colors"
+          />
+        </div>
+
+        <!-- Sort Dropdown -->
+        <div class="w-full md:w-auto">
+          <select
+            id="sort-select"
+            class="w-full px-4 py-3 border border-bg-secondary rounded-lg focus:outline-none focus:border-interfaith transition-colors"
+          >
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="title">A-Z Title</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tags Filter -->
+      <div class="mt-6">
+        <p class="text-sm text-text-secondary mb-3">Filter by topic:</p>
+        <div class="flex flex-wrap gap-2">
+          <button
+            data-filter-tag="all"
+            class="tag-filter active px-3 py-1 bg-interfaith text-white text-sm rounded-full transition-all hover:scale-105"
+          >
+            All Topics
+          </button>
+          {tags.slice(0, 15).map(tag => (
+            <button
+              data-filter-tag={tag}
+              class="tag-filter px-3 py-1 bg-bg-secondary text-text-secondary text-sm rounded-full transition-all hover:bg-interfaith hover:text-white"
+            >
+              #{tag}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teachings Grid -->
+  <section class="teachings-grid bg-bg-secondary py-12 px-4">
+    <div class="container mx-auto max-w-6xl">
+      <!-- Results Count -->
+      <div class="mb-8 text-center">
+        <p class="text-text-secondary">
+          Showing <span id="results-count" class="font-semibold text-text-primary">{teachings.length}</span> teachings
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div id="teachings-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {teachings.map(teaching => {
+          // Extract base slug (filename only, without religion directory)
+          const baseSlug = teaching.slug.split('/').pop() || teaching.slug;
+          return (
+          <article
+            class="teaching-card"
+            data-religion={teaching.data.religion}
+            data-tags={JSON.stringify(teaching.data.tags || [])}
+            data-title={teaching.data.title.toLowerCase()}
+            data-excerpt={teaching.data.excerpt?.toLowerCase() || ''}
+            data-date={teaching.data.publishedDate.getTime()}
+          >
+            <a
+              href={`/teachings/${teaching.data.religion}/${baseSlug}`}
+              class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full group"
+            >
+              {/* Featured Image */}
+              {teaching.data.featuredImage && (
+                <div class="relative h-48 overflow-hidden">
+                  <img
+                    src={teaching.data.featuredImage}
+                    alt={teaching.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  {/* Religion Badge */}
+                  <span
+                    class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold text-white"
+                    style={`background-color: ${getReligionColor(teaching.data.religion)};`}
+                  >
+                    {getReligionName(teaching.data.religion)}
+                  </span>
+                </div>
+              )}
+
+              {/* Content */}
+              <div class="p-6">
+                <h2 class="text-xl font-semibold mb-3 text-text-primary group-hover:text-interfaith transition-colors line-clamp-2">
+                  {teaching.data.title}
+                </h2>
+
+                {teaching.data.excerpt && (
+                  <p class="text-text-secondary text-sm mb-4 line-clamp-3">
+                    {teaching.data.excerpt}
+                  </p>
+                )}
+
+                {/* Meta Info */}
+                <div class="flex flex-wrap items-center gap-4 text-xs text-text-secondary mb-4">
+                  {/* Date */}
+                  <div class="flex items-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <time datetime={teaching.data.publishedDate.toISOString()}>
+                      {formatDate(teaching.data.publishedDate)}
+                    </time>
+                  </div>
+
+                  {/* Difficulty */}
+                  {teaching.data.difficulty && (
+                    <span class="px-2 py-0.5 bg-bg-secondary rounded capitalize">
+                      {teaching.data.difficulty}
+                    </span>
+                  )}
+                </div>
+
+                {/* Tags */}
+                {teaching.data.tags && teaching.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5">
+                    {teaching.data.tags.slice(0, 3).map(tag => (
+                      <span class="inline-block px-2 py-0.5 bg-bg-secondary text-text-secondary text-xs rounded">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Source Text */}
+                {teaching.data.sourceText && (
+                  <div class="mt-4 pt-4 border-t border-bg-secondary text-xs text-text-secondary italic">
+                    Source: {teaching.data.sourceText}
+                  </div>
+                )}
+              </div>
+            </a>
+          </article>
+          );
+        })}
+      </div>
+
+      <!-- No Results Message -->
+      <div id="no-results" class="hidden text-center py-12">
+        <svg class="w-16 h-16 mx-auto mb-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <h3 class="text-xl font-semibold text-text-primary mb-2">No teachings found</h3>
+        <p class="text-text-secondary">Try adjusting your filters or search terms</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section bg-white py-12 px-4">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h3 class="text-2xl font-bold mb-4 text-text-primary">
+        Want to contribute or suggest a teaching?
+      </h3>
+      <p class="text-text-secondary mb-6">
+        We're always looking to expand our collection with scholarly, accurate teachings on peace
+      </p>
+      <a
+        href="/contribute"
+        class="inline-block px-6 py-3 bg-interfaith text-white rounded-lg font-semibold hover:bg-interfaith-dark transition-colors"
+      >
+        Learn How to Contribute
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .teaching-card {
+    transition: all 0.3s ease;
+  }
+
+  .teaching-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .filter-btn.active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .tag-filter.active {
+    transform: scale(1.05);
+  }
+</style>
+
+<script>
+  // Client-side filtering and search
+  document.addEventListener('DOMContentLoaded', () => {
+    const teachingsContainer = document.getElementById('teachings-container');
+    const teachingCards = document.querySelectorAll('.teaching-card');
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+    const religionFilters = document.querySelectorAll('.religion-filter');
+    const tagFilters = document.querySelectorAll('.tag-filter');
+    const resultsCount = document.getElementById('results-count');
+    const noResults = document.getElementById('no-results');
+
+    let currentReligion = 'all';
+    let currentTag = 'all';
+    let currentSearch = '';
+    let currentSort = 'newest';
+
+    function filterAndSort() {
+      let visibleCount = 0;
+      const cards = Array.from(teachingCards);
+
+      // Filter
+      const filteredCards = cards.filter(card => {
+        const religion = (card as HTMLElement).dataset.religion;
+        const tags = JSON.parse((card as HTMLElement).dataset.tags || '[]');
+        const title = (card as HTMLElement).dataset.title || '';
+        const excerpt = (card as HTMLElement).dataset.excerpt || '';
+
+        // Religion filter
+        if (currentReligion !== 'all' && religion !== currentReligion) {
+          return false;
+        }
+
+        // Tag filter
+        if (currentTag !== 'all' && !tags.includes(currentTag)) {
+          return false;
+        }
+
+        // Search filter
+        if (currentSearch && !title.includes(currentSearch) && !excerpt.includes(currentSearch)) {
+          return false;
+        }
+
+        return true;
+      });
+
+      // Sort
+      filteredCards.sort((a, b) => {
+        const aDate = parseInt((a as HTMLElement).dataset.date || '0');
+        const bDate = parseInt((b as HTMLElement).dataset.date || '0');
+        const aTitle = (a as HTMLElement).dataset.title || '';
+        const bTitle = (b as HTMLElement).dataset.title || '';
+
+        switch (currentSort) {
+          case 'newest':
+            return bDate - aDate;
+          case 'oldest':
+            return aDate - bDate;
+          case 'title':
+            return aTitle.localeCompare(bTitle);
+          default:
+            return 0;
+        }
+      });
+
+      // Show/hide cards
+      cards.forEach(card => {
+        (card as HTMLElement).style.display = 'none';
+      });
+
+      filteredCards.forEach(card => {
+        (card as HTMLElement).style.display = 'block';
+        visibleCount++;
+      });
+
+      // Re-append in sorted order
+      if (teachingsContainer) {
+        filteredCards.forEach(card => {
+          teachingsContainer.appendChild(card);
+        });
+      }
+
+      // Update results count
+      if (resultsCount) {
+        resultsCount.textContent = visibleCount.toString();
+      }
+
+      // Show/hide no results message
+      if (noResults && teachingsContainer) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+          teachingsContainer.classList.add('hidden');
+        } else {
+          noResults.classList.add('hidden');
+          teachingsContainer.classList.remove('hidden');
+        }
+      }
+    }
+
+    // Religion filter
+    religionFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        religionFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentReligion = (btn as HTMLElement).dataset.filterReligion || 'all';
+        filterAndSort();
+      });
+    });
+
+    // Tag filter
+    tagFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tagFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTag = (btn as HTMLElement).dataset.filterTag || 'all';
+        filterAndSort();
+      });
+    });
+
+    // Search
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        currentSearch = searchInput.value.toLowerCase();
+        filterAndSort();
+      });
+    }
+
+    // Sort
+    if (sortSelect) {
+      sortSelect.addEventListener('change', () => {
+        currentSort = sortSelect.value;
+        filterAndSort();
+      });
+    }
+  });
+</script>

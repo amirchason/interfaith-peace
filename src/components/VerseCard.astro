@@ -1,0 +1,16 @@
+---
+interface Props {
+  reference?: string;
+  text?: string;
+  translation?: string;
+}
+
+const { reference, text, translation } = Astro.props;
+---
+
+<div class="my-6 p-5 bg-slate-50 border border-slate-200 rounded-lg">
+  {reference && <p class="text-sm font-semibold text-slate-700 mb-2">{reference}</p>}
+  {text && <p class="text-lg text-slate-900 italic mb-2">{text}</p>}
+  {translation && <p class="text-sm text-slate-600">{translation}</p>}
+  <slot />
+</div>

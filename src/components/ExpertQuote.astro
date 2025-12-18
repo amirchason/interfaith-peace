@@ -1,0 +1,18 @@
+---
+interface Props {
+  expert?: string;
+  credentials?: string;
+  quote?: string;
+}
+
+const { expert, credentials, quote } = Astro.props;
+---
+
+<blockquote class="my-6 pl-5 border-l-4 border-gray-400 bg-gray-50 p-5 rounded-r-lg">
+  {quote && <p class="text-base text-gray-800 italic mb-3">"{quote}"</p>}
+  <footer class="text-sm">
+    {expert && <strong class="text-gray-900">{expert}</strong>}
+    {credentials && <span class="text-gray-600 block mt-1">{credentials}</span>}
+  </footer>
+  <slot />
+</blockquote>

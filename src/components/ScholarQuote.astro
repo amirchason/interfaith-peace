@@ -1,0 +1,17 @@
+---
+interface Props {
+  scholar: string;
+  source: string;
+  quote: string;
+}
+
+const { scholar, source, quote } = Astro.props;
+---
+
+<blockquote class="my-8 pl-6 border-l-4 border-indigo-500 bg-indigo-50 p-6 rounded-r-lg">
+  <p class="text-lg text-gray-800 italic mb-4">"{quote}"</p>
+  <footer class="text-sm">
+    <strong class="text-indigo-900">{scholar}</strong>
+    <cite class="text-gray-600 block mt-1">{source}</cite>
+  </footer>
+</blockquote>

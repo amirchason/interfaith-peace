@@ -1,0 +1,14 @@
+---
+interface Props {
+  tactic?: string;
+  description?: string;
+}
+
+const { tactic, description } = Astro.props;
+---
+
+<div class="my-4 p-4 bg-pink-50 border border-pink-200 rounded-lg">
+  {tactic && <h5 class="text-base font-bold text-pink-900 mb-2">{tactic}</h5>}
+  {description && <p class="text-sm text-gray-800">{description}</p>}
+  <slot />
+</div>

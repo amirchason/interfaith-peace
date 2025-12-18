@@ -1,0 +1,13 @@
+# Robots.txt for Interfaith Peace Initiative
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://peace.org/sitemap-index.xml
+
+# Disallow admin and API routes
+Disallow: /admin/
+Disallow: /api/
+
+# Crawl delay (be respectful)
+Crawl-delay: 1

@@ -1,0 +1,162 @@
+---
+import type { TeachingFrontmatter } from '../types';
+
+export interface Props {
+  article: TeachingFrontmatter;
+  url?: string;
+}
+
+const { article, url } = Astro.props;
+
+// Get full URL for the article
+const articleUrl = url || new URL(Astro.url.pathname, Astro.site).href;
+
+// Helper to ensure date is a Date object (handles both Date objects and strings)
+function ensureDate(date: Date | string): Date {
+  return date instanceof Date ? date : new Date(date);
+}
+
+const publishedDate = ensureDate(article.publishedDate);
+const updatedDate = article.updatedDate ? ensureDate(article.updatedDate) : publishedDate;
+
+// Build author array from scholars if available
+const authors = article.scholars?.map(scholar => ({
+  "@type": "Person",
+  "name": scholar.name,
+  "affiliation": {
+    "@type": "Organization",
+    "name": scholar.affiliation
+  }
+})) || [{
+  "@type": "Organization",
+  "name": "Interfaith Peace Initiative"
+}];
+
+// Build keywords from tags
+const keywords = article.tags?.join(', ') || '';
+
+// Create religion-specific context
+const aboutSection = {
+  "@type": "Thing",
+  "name": article.religion.charAt(0).toUpperCase() + article.religion.slice(1),
+  "description": `Peace teachings from ${article.religion}`
+};
+
+// Build parallel teachings relationships if available
+const mentions = article.parallelTeachings?.map(parallel => ({
+  "@type": "CreativeWork",
+  "name": parallel.teaching,
+  "about": {
+    "@type": "Thing",
+    "name": parallel.religion.charAt(0).toUpperCase() + parallel.religion.slice(1)
+  },
+  "description": parallel.similarity
+})) || [];
+
+// Main Article schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.excerpt || `Explore ${article.title} - a teaching on peace from ${article.religion}`,
+  "image": article.featuredImage ? new URL(article.featuredImage, Astro.site).href : undefined,
+  "datePublished": publishedDate.toISOString(),
+  "dateModified": updatedDate.toISOString(),
+  "author": authors,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Interfaith Peace Initiative",
+    "url": Astro.site?.href,
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/logo.png', Astro.site).href
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": articleUrl
+  },
+  "about": aboutSection,
+  "keywords": keywords,
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "educationalLevel": article.difficulty || "beginner",
+  "learningResourceType": "Article",
+  "educationalUse": ["study", "research", "interfaith dialogue"],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student, researcher, spiritual seeker"
+  }
+};
+
+// Add mentions if we have parallel teachings
+if (mentions.length > 0) {
+  articleSchema.mentions = mentions;
+}
+
+// Add sourceText information if available
+if (article.sourceText) {
+  articleSchema.citation = {
+    "@type": "CreativeWork",
+    "name": article.sourceText,
+    "inLanguage": article.originalLanguage || "unknown"
+  };
+}
+
+// BreadcrumbList schema for better navigation
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": Astro.site?.href
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Teachings",
+      "item": new URL('/teachings', Astro.site).href
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": article.religion.charAt(0).toUpperCase() + article.religion.slice(1),
+      "item": new URL(`/teachings/${article.religion}`, Astro.site).href
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": article.title,
+      "item": articleUrl
+    }
+  ]
+};
+
+// Combine schemas
+const schemas = [articleSchema, breadcrumbSchema];
+---
+
+<!-- JSON-LD structured data for SEO -->
+<script type="application/ld+json" set:html={JSON.stringify(schemas)} />
+
+<!-- Additional meta tags for social sharing -->
+<meta property="article:published_time" content={publishedDate.toISOString()} />
+{article.updatedDate && (
+  <meta property="article:modified_time" content={updatedDate.toISOString()} />
+)}
+<meta property="article:section" content={article.category} />
+{article.tags?.map(tag => (
+  <meta property="article:tag" content={tag} />
+))}
+
+<!-- Schema.org metadata for crawlers -->
+<meta itemprop="name" content={article.title} />
+<meta itemprop="description" content={article.excerpt || `Explore ${article.title}`} />
+{article.featuredImage && (
+  <meta itemprop="image" content={new URL(article.featuredImage, Astro.site).href} />
+)}
+<meta itemprop="datePublished" content={publishedDate.toISOString()} />
+<meta itemprop="dateModified" content={updatedDate.toISOString()} />

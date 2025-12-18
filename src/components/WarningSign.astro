@@ -1,0 +1,14 @@
+---
+interface Props {
+  level?: string;
+  sign?: string;
+}
+
+const { level, sign } = Astro.props;
+---
+
+<div class="my-4 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+  {level && <p class="text-sm font-semibold text-red-900 mb-1">⚠️ {level}</p>}
+  {sign && <p class="text-base text-gray-800">{sign}</p>}
+  <slot />
+</div>

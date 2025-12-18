@@ -1,0 +1,27 @@
+---
+// This is an alias for ArticleSchema - some articles import this variant
+interface Props {
+  title: string;
+  description: string;
+  publishedDate: string;
+  category: string;
+  tags: string[];
+  keywords: string[];
+}
+
+const { title, description, publishedDate, category, tags, keywords } = Astro.props;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": publishedDate,
+  "articleSection": category,
+  "keywords": keywords.join(", "),
+  "author": {
+    "@type": "Organization",
+    "name": "Interfaith Peace Initiative"
+  }
+})} />

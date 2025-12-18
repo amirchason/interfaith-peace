@@ -1,0 +1,16 @@
+---
+interface Props {
+  word?: string;
+  pronunciation?: string;
+  meaning?: string;
+}
+
+const { word, pronunciation, meaning } = Astro.props;
+---
+
+<div class="my-6 p-5 bg-blue-50 border border-blue-200 rounded-lg">
+  {word && <p class="text-2xl font-bold text-blue-900 mb-1" dir="rtl">{word}</p>}
+  {pronunciation && <p class="text-sm text-blue-700 mb-2">{pronunciation}</p>}
+  {meaning && <p class="text-base text-gray-800">{meaning}</p>}
+  <slot />
+</div>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  title?: string;
+  source?: string;
+}
+
+const { title, source } = Astro.props;
+---
+
+<div class="my-6 p-5 bg-cyan-50 border border-cyan-200 rounded-lg">
+  {title && <h4 class="text-lg font-bold text-cyan-900 mb-2">{title}</h4>}
+  <div class="prose prose-cyan max-w-none text-gray-800">
+    <slot />
+  </div>
+  {source && <p class="text-xs text-cyan-700 mt-3 italic">Source: {source}</p>}
+</div>

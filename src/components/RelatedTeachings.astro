@@ -1,0 +1,172 @@
+---
+import { getCollection } from 'astro:content';
+import type { Religion } from '../types';
+
+export interface Props {
+  currentSlug: string;
+  tags: string[];
+  religion: Religion;
+  limit?: number;
+}
+
+const { currentSlug, tags, religion, limit = 6 } = Astro.props;
+
+// Get all teachings from the collection
+const allTeachings = await getCollection('teachings');
+
+// Filter out current teaching
+const otherTeachings = allTeachings.filter(
+  teaching => teaching.slug !== currentSlug
+);
+
+// Score teachings by relevance
+const scoredTeachings = otherTeachings.map(teaching => {
+  let score = 0;
+
+  // Shared tags boost score significantly
+  const sharedTags = teaching.data.tags.filter(tag => tags.includes(tag));
+  score += sharedTags.length * 10;
+
+  // Same religion gets a small boost
+  if (teaching.data.religion === religion) {
+    score += 2;
+  }
+
+  // Different religion gets a boost for diversity
+  if (teaching.data.religion !== religion) {
+    score += 5;
+  }
+
+  // Same difficulty level
+  // No difficulty comparison since we don't have difficulty in Props
+
+  return {
+    teaching,
+    score,
+    sharedTags
+  };
+});
+
+// Sort by score and take top results
+const relatedTeachings = scoredTeachings
+  .sort((a, b) => b.score - a.score)
+  .slice(0, limit)
+  .map(item => item.teaching);
+
+// Helper function to get religion color
+function getReligionColor(religion: Religion): string {
+  const colors = {
+    christianity: 'bg-christianity text-white',
+    islam: 'bg-islam text-white',
+    buddhism: 'bg-buddhism text-white',
+    hinduism: 'bg-hinduism text-white',
+    judaism: 'bg-judaism text-white',
+    interfaith: 'bg-interfaith text-white'
+  };
+  return colors[religion] || colors.interfaith;
+}
+
+// Helper function to get religion display name
+function getReligionName(religion: Religion): string {
+  return religion.charAt(0).toUpperCase() + religion.slice(1);
+}
+---
+
+{relatedTeachings.length > 0 && (
+  <section class="related-teachings py-12 bg-bg-secondary">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center text-text-primary">
+        Related Teachings
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {relatedTeachings.map(teaching => {
+          // Extract base slug (filename only, without religion directory)
+          const baseSlug = teaching.slug.split('/').pop() || teaching.slug;
+          return (
+          <a
+            href={`/teachings/${teaching.data.religion}/${baseSlug}`}
+            class="related-teaching-card group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+          >
+            {/* Featured Image */}
+            {teaching.data.featuredImage && (
+              <div class="relative h-48 overflow-hidden">
+                <img
+                  src={teaching.data.featuredImage}
+                  alt={teaching.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                {/* Religion badge overlay */}
+                <span
+                  class={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold ${getReligionColor(teaching.data.religion)}`}
+                >
+                  {getReligionName(teaching.data.religion)}
+                </span>
+              </div>
+            )}
+
+            {/* Content */}
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3 text-text-primary group-hover:text-interfaith transition-colors">
+                {teaching.data.title}
+              </h3>
+
+              {teaching.data.excerpt && (
+                <p class="text-text-secondary text-sm mb-4 line-clamp-3">
+                  {teaching.data.excerpt}
+                </p>
+              )}
+
+              {/* Tags */}
+              {teaching.data.tags && teaching.data.tags.length > 0 && (
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {teaching.data.tags.slice(0, 3).map(tag => (
+                    <span class="inline-block px-2 py-1 bg-bg-secondary text-text-secondary text-xs rounded">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* Source text */}
+              {teaching.data.sourceText && (
+                <div class="text-xs text-text-secondary italic border-t border-bg-secondary pt-3">
+                  Source: {teaching.data.sourceText}
+                </div>
+              )}
+            </div>
+          </a>
+          );
+        })}
+      </div>
+
+      {/* View All Link */}
+      <div class="text-center mt-10">
+        <a
+          href="/teachings"
+          class="inline-block px-6 py-3 bg-interfaith text-white rounded-lg font-semibold hover:bg-interfaith-dark transition-colors"
+        >
+          Explore All Teachings →
+        </a>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .related-teaching-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .related-teaching-card:hover {
+    transform: translateY(-4px);
+  }
+</style>

@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Religion colors defined in tailwind.config.mjs */
+    --christianity: #4A90E2;
+    --islam: #2ECC71;
+    --hinduism: #F39C12;
+    --buddhism: #9B59B6;
+    --judaism: #3498DB;
+    --interfaith: #95A5A6;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans leading-relaxed;
+  }
+
+  /* Typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl mb-6;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl mb-4;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl mb-3;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-interfaith;
+  }
+
+  /* Smooth transitions */
+  * {
+    @apply transition-colors duration-150;
+  }
+}
+
+@layer components {
+  /* Religion badge component */
+  .religion-badge {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold text-white;
+  }
+
+  .religion-badge[data-religion="christianity"] {
+    @apply bg-christianity;
+  }
+
+  .religion-badge[data-religion="islam"] {
+    @apply bg-islam;
+  }
+
+  .religion-badge[data-religion="hinduism"] {
+    @apply bg-hinduism;
+  }
+
+  .religion-badge[data-religion="buddhism"] {
+    @apply bg-buddhism;
+  }
+
+  .religion-badge[data-religion="judaism"] {
+    @apply bg-judaism;
+  }
+
+  .religion-badge[data-religion="interfaith"] {
+    @apply bg-interfaith;
+  }
+
+  /* Button styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-interfaith text-white hover:bg-interfaith-dark focus:ring-interfaith;
+  }
+
+  .btn-secondary {
+    @apply bg-bg-secondary text-text-primary hover:bg-bg-tertiary focus:ring-interfaith;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6;
+  }
+
+  /* Container */
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Article content styles */
+  .article-content {
+    @apply prose prose-lg max-w-none;
+  }
+
+  .article-content h2 {
+    @apply text-interfaith-dark mt-8 mb-4;
+  }
+
+  .article-content h3 {
+    @apply text-text-primary mt-6 mb-3;
+  }
+
+  .article-content blockquote {
+    @apply border-l-4 border-interfaith bg-bg-secondary px-6 py-4 my-6 italic;
+  }
+
+  .article-content code {
+    @apply bg-bg-secondary px-2 py-1 rounded text-sm;
+  }
+
+  .article-content pre {
+    @apply bg-text-primary text-white p-4 rounded-lg overflow-x-auto my-6;
+  }
+
+  .article-content table {
+    @apply w-full border-collapse my-6;
+  }
+
+  .article-content th {
+    @apply bg-bg-secondary font-semibold text-left p-3 border-b-2 border-interfaith;
+  }
+
+  .article-content td {
+    @apply p-3 border-b border-bg-secondary;
+  }
+}
+
+@layer utilities {
+  /* RTL support for Arabic and Hebrew */
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none;
+    }
+
+    body {
+      @apply text-black bg-white;
+    }
+
+    a {
+      @apply text-black underline;
+    }
+  }
+}

@@ -1,0 +1,390 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../../components/ArticleSchema.astro';
+import RelatedTeachings from '../../../components/RelatedTeachings.astro';
+import type { Religion } from '../../../types';
+
+export async function getStaticPaths() {
+  const teachings = await getCollection('teachings');
+
+  return teachings.map(teaching => {
+    // Extract the base slug (filename without religion directory)
+    // e.g., "buddhism/metta-loving-kindness" -> "metta-loving-kindness"
+    const baseSlug = teaching.slug.split('/').pop() || teaching.slug;
+
+    return {
+      params: {
+        religion: teaching.data.religion,
+        slug: baseSlug
+      },
+      props: { teaching }
+    };
+  });
+}
+
+type Props = {
+  teaching: CollectionEntry<'teachings'>;
+};
+
+const { teaching } = Astro.props;
+const { Content } = await teaching.render();
+
+// Get religion color for styling
+function getReligionColor(religion: Religion): string {
+  const colors = {
+    christianity: '#4A90E2',
+    islam: '#2ECC71',
+    buddhism: '#9B59B6',
+    hinduism: '#F39C12',
+    judaism: '#3498DB',
+    interfaith: '#95A5A6'
+  };
+  return colors[religion] || colors.interfaith;
+}
+
+// Get religion display name
+function getReligionName(religion: Religion): string {
+  return religion.charAt(0).toUpperCase() + religion.slice(1);
+}
+
+// Format date
+function formatDate(date: Date): string {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(date);
+}
+
+// Build breadcrumb
+const breadcrumb = [
+  { name: 'Home', href: '/' },
+  { name: 'Teachings', href: '/teachings' },
+  { name: getReligionName(teaching.data.religion), href: `/teachings/${teaching.data.religion}` },
+  { name: teaching.data.title, href: Astro.url.pathname }
+];
+
+const religionColor = getReligionColor(teaching.data.religion);
+---
+
+<BaseLayout
+  title={teaching.data.title}
+  description={teaching.data.excerpt || `Explore ${teaching.data.title} - a teaching on peace from ${teaching.data.religion}`}
+  religion={teaching.data.religion}
+  ogImage={teaching.data.featuredImage}
+>
+  <!-- Article Schema for SEO -->
+  <ArticleSchema article={teaching.data} />
+
+  <!-- Article Header -->
+  <article class="teaching-article">
+    <!-- Hero Section -->
+    <header
+      class="hero-section py-16 px-4"
+      style={`background: linear-gradient(135deg, ${religionColor}15, ${religionColor}05);`}
+    >
+      <div class="container mx-auto max-w-4xl">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb mb-6 text-sm" aria-label="Breadcrumb">
+          <ol class="flex flex-wrap items-center gap-2">
+            {breadcrumb.map((item, index) => (
+              <>
+                {index > 0 && (
+                  <li class="text-text-secondary" aria-hidden="true">/</li>
+                )}
+                <li>
+                  {index === breadcrumb.length - 1 ? (
+                    <span class="text-text-secondary" aria-current="page">
+                      {item.name}
+                    </span>
+                  ) : (
+                    <a
+                      href={item.href}
+                      class="text-text-primary hover:underline"
+                    >
+                      {item.name}
+                    </a>
+                  )}
+                </li>
+              </>
+            ))}
+          </ol>
+        </nav>
+
+        <!-- Religion Badge -->
+        <div class="mb-4">
+          <span
+            class="inline-block px-4 py-2 rounded-full text-sm font-semibold text-white"
+            style={`background-color: ${religionColor};`}
+          >
+            {getReligionName(teaching.data.religion)}
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-text-primary">
+          {teaching.data.title}
+        </h1>
+
+        <!-- Excerpt -->
+        {teaching.data.excerpt && (
+          <p class="text-xl md:text-2xl text-text-secondary mb-8 leading-relaxed">
+            {teaching.data.excerpt}
+          </p>
+        )}
+
+        <!-- Metadata -->
+        <div class="flex flex-wrap items-center gap-6 text-sm text-text-secondary">
+          <!-- Published Date -->
+          <div class="flex items-center gap-2">
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <time datetime={teaching.data.publishedDate.toISOString()}>
+              {formatDate(teaching.data.publishedDate)}
+            </time>
+          </div>
+
+          <!-- Source Text -->
+          {teaching.data.sourceText && (
+            <div class="flex items-center gap-2">
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
+              </svg>
+              <span>Source: {teaching.data.sourceText}</span>
+            </div>
+          )}
+
+          <!-- Difficulty -->
+          {teaching.data.difficulty && (
+            <div class="flex items-center gap-2">
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              <span class="capitalize">{teaching.data.difficulty}</span>
+            </div>
+          )}
+        </div>
+
+        <!-- Tags -->
+        {teaching.data.tags && teaching.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-6">
+            {teaching.data.tags.map(tag => (
+              <a
+                href={`/teachings/tags/${tag}`}
+                class="inline-block px-3 py-1 bg-white text-text-secondary text-sm rounded-full hover:bg-bg-secondary transition-colors"
+              >
+                #{tag}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <div class="article-content bg-white">
+      <div class="container mx-auto max-w-4xl px-4 py-12">
+        <!-- Featured Image -->
+        {teaching.data.featuredImage && (
+          <div class="mb-12 rounded-lg overflow-hidden shadow-lg">
+            <img
+              src={teaching.data.featuredImage}
+              alt={teaching.data.title}
+              class="w-full h-auto"
+              loading="eager"
+            />
+          </div>
+        )}
+
+        <!-- Scholars Section -->
+        {teaching.data.scholars && teaching.data.scholars.length > 0 && (
+          <div class="scholars-section mb-12 p-6 bg-bg-secondary rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-text-primary">
+              Scholarly Perspectives
+            </h3>
+            <div class="space-y-4">
+              {teaching.data.scholars.map(scholar => (
+                <div class="scholar-card">
+                  <div class="font-semibold text-text-primary">
+                    {scholar.name}
+                  </div>
+                  <div class="text-sm text-text-secondary">
+                    {scholar.affiliation}
+                  </div>
+                  <div class="text-sm text-text-secondary italic mt-1">
+                    {scholar.perspective}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Main Content (MDX) -->
+        <div class="prose prose-lg max-w-none">
+          <Content />
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Teachings -->
+    <RelatedTeachings
+      currentSlug={teaching.slug}
+      tags={teaching.data.tags}
+      religion={teaching.data.religion}
+      limit={6}
+    />
+
+    <!-- Share & Back Navigation -->
+    <div class="container mx-auto max-w-4xl px-4 py-12">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-bg-secondary pt-8">
+        <!-- Back Link -->
+        <a
+          href={`/teachings/${teaching.data.religion}`}
+          class="inline-flex items-center gap-2 text-text-primary hover:text-interfaith transition-colors"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          Back to {getReligionName(teaching.data.religion)} Teachings
+        </a>
+
+        <!-- Share Buttons -->
+        <div class="flex items-center gap-4">
+          <span class="text-sm text-text-secondary">Share:</span>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(teaching.data.title)}&url=${encodeURIComponent(Astro.url.href)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-text-secondary hover:text-interfaith transition-colors"
+            aria-label="Share on Twitter"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-text-secondary hover:text-interfaith transition-colors"
+            aria-label="Share on Facebook"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .prose {
+    @apply text-text-primary;
+  }
+
+  .prose h2 {
+    @apply text-3xl font-bold mt-12 mb-6 text-text-primary;
+  }
+
+  .prose h3 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-text-primary;
+  }
+
+  .prose h4 {
+    @apply text-xl font-semibold mt-6 mb-3 text-text-primary;
+  }
+
+  .prose p {
+    @apply mb-6 leading-relaxed;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-interfaith pl-6 italic my-8 text-text-secondary;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply mb-6 space-y-2;
+  }
+
+  .prose li {
+    @apply leading-relaxed;
+  }
+
+  .prose a {
+    @apply text-interfaith hover:underline;
+  }
+
+  .prose table {
+    @apply w-full my-8 border-collapse;
+  }
+
+  .prose th {
+    @apply bg-bg-secondary font-semibold p-3 text-left border border-bg-secondary;
+  }
+
+  .prose td {
+    @apply p-3 border border-bg-secondary;
+  }
+
+  .prose code {
+    @apply bg-bg-secondary px-2 py-1 rounded text-sm font-mono;
+  }
+
+  .prose pre {
+    @apply bg-bg-secondary p-4 rounded-lg overflow-x-auto my-6;
+  }
+
+  .prose img {
+    @apply rounded-lg shadow-md my-8;
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+interface Props {
+  articles: string[];
+}
+
+const { articles } = Astro.props;
+---
+
+<div class="my-12 p-6 bg-gray-100 rounded-lg">
+  <h3 class="text-2xl font-bold mb-4">📚 Related Articles</h3>
+  <ul class="space-y-2">
+    {articles.map(article => (
+      <li>
+        <a href={`/articles/${article}`} class="text-blue-600 hover:text-blue-800 hover:underline">
+          → {article.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

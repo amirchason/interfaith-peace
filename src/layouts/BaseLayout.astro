@@ -1,0 +1,77 @@
+---
+import type { PageMeta, Religion } from '../types';
+
+export interface Props extends PageMeta {}
+
+const {
+  title,
+  description,
+  religion = 'interfaith',
+  canonicalURL,
+  ogImage
+} = Astro.props;
+
+const pageURL = canonicalURL || new URL(Astro.url.pathname, Astro.site).href;
+const defaultOG = `/og-images/${religion}.png`;
+const fullTitle = `${title} | Interfaith Peace Initiative`;
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={pageURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={pageURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage || defaultOG} />
+  <meta property="og:site_name" content="Interfaith Peace Initiative" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={pageURL} />
+  <meta property="twitter:title" content={fullTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={ogImage || defaultOG} />
+
+  <!-- Fonts (Preload for performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#95A5A6" />
+
+  <!-- Analytics (Privacy-friendly Plausible) -->
+  {import.meta.env.PROD && (
+    <script defer data-domain="peace.org" src="https://plausible.io/js/script.js"></script>
+  )}
+
+  <!-- Generator -->
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Interfaith Peace Initiative" />
+  <meta name="keywords" content="peace, interfaith, religion, spirituality, {religion}, harmony, unity, compassion, nonviolence" />
+
+  <slot name="head" />
+</head>
+<body class="bg-bg-primary text-text-primary antialiased">
+  <slot />
+</body>
+</html>

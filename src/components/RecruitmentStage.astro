@@ -1,0 +1,14 @@
+---
+interface Props {
+  stage?: string;
+  description?: string;
+}
+
+const { stage, description } = Astro.props;
+---
+
+<div class="my-4 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-r-lg">
+  {stage && <h5 class="text-base font-bold text-orange-900 mb-2">{stage}</h5>}
+  {description && <p class="text-sm text-gray-800">{description}</p>}
+  <slot />
+</div>
