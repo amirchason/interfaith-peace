@@ -1,0 +1,25 @@
+# Cloudflare Pages configuration for Interfaith Peace Initiative
+name = "interfaith-peace"
+compatibility_date = "2025-01-01"
+
+[build]
+command = "npm run build"
+cwd = "/"
+watch_dir = "src"
+
+[build.upload]
+format = "directory"
+dir = "dist"
+
+[[build.environment_variables]]
+# Add environment variables here
+# SUPABASE_URL = ""
+# SUPABASE_ANON_KEY = ""
+# MEILISEARCH_HOST = ""
+# MEILISEARCH_API_KEY = ""
+
+[env.production]
+vars = { NODE_ENV = "production" }
+
+[env.preview]
+vars = { NODE_ENV = "preview" }
