@@ -5,11 +5,14 @@ interface Props {
   description: string;
   publishedDate: string;
   category: string;
-  tags: string[];
-  keywords: string[];
+  tags?: string[];
+  keywords?: string[];
 }
 
 const { title, description, publishedDate, category, tags, keywords } = Astro.props;
+
+// Safely build keywords string
+const keywordsString = (Array.isArray(keywords) && keywords.length > 0) ? keywords.join(", ") : "";
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -19,7 +22,7 @@ const { title, description, publishedDate, category, tags, keywords } = Astro.pr
   "description": description,
   "datePublished": publishedDate,
   "articleSection": category,
-  "keywords": keywords.join(", "),
+  "keywords": keywordsString,
   "author": {
     "@type": "Organization",
     "name": "Interfaith Peace Initiative"

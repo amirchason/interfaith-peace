@@ -1,12 +1,34 @@
 ---
 interface Props {
   title: string;
+  description?: string;
   subtitle?: string;
-  imageSrc: string;
+  category?: string;
+  publishedDate?: string;
+  author?: string;
+  image?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  tags?: string[];
   religion?: 'christianity' | 'islam' | 'hinduism' | 'buddhism' | 'judaism' | 'interfaith';
 }
 
-const { title, subtitle, imageSrc, religion = 'interfaith' } = Astro.props;
+const {
+  title,
+  description,
+  subtitle,
+  category,
+  publishedDate,
+  author,
+  image,
+  imageSrc,
+  imageAlt,
+  tags,
+  religion = 'interfaith'
+} = Astro.props;
+
+const heroImage = image || imageSrc || '/images/hero/hero-interfaith-peace.svg';
+const heroSubtitle = subtitle || description;
 
 const religionColors = {
   christianity: { bg: 'from-christianity-dark to-christianity', text: 'text-christianity' },
@@ -23,21 +45,48 @@ const colors = religionColors[religion];
 <div class={`relative overflow-hidden rounded-2xl shadow-2xl mb-12 ${colors.bg} bg-gradient-to-br`}>
   <div class="absolute inset-0">
     <img
-      src={imageSrc}
-      alt={title}
+      src={heroImage}
+      alt={imageAlt || title}
       class="w-full h-full object-cover opacity-30 mix-blend-overlay"
       loading="eager"
     />
   </div>
   <div class="relative px-8 py-24 md:py-32">
     <div class="max-w-4xl mx-auto text-center text-white">
+      {category && (
+        <div class="mb-4">
+          <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold uppercase tracking-wide">
+            {category}
+          </span>
+        </div>
+      )}
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
         {title}
       </h1>
-      {subtitle && (
-        <p class="text-xl md:text-2xl opacity-95 drop-shadow-md font-light">
-          {subtitle}
+      {heroSubtitle && (
+        <p class="text-xl md:text-2xl opacity-95 drop-shadow-md font-light max-w-3xl mx-auto">
+          {heroSubtitle}
         </p>
+      )}
+      {(publishedDate || author) && (
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm opacity-90">
+          {publishedDate && (
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>{publishedDate}</span>
+            </div>
+          )}
+          {author && (
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span>{author}</span>
+            </div>
+          )}
+        </div>
       )}
     </div>
   </div>

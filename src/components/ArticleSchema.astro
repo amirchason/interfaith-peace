@@ -2,22 +2,45 @@
 import type { TeachingFrontmatter } from '../types';
 
 export interface Props {
-  article: TeachingFrontmatter;
+  // Can accept either full article object OR individual props
+  article?: TeachingFrontmatter;
   url?: string;
+  // Individual props (for legacy MDX compatibility)
+  title?: string;
+  description?: string;
+  publishedDate?: string | Date;
+  updatedDate?: string | Date;
+  category?: string;
+  tags?: string[];
+  keywords?: string[];
 }
 
-const { article, url } = Astro.props;
+const props = Astro.props;
+
+// Build article object from either article prop or individual props
+const article = props.article || {
+  title: props.title || '',
+  description: props.description || '',
+  publishedDate: props.publishedDate,
+  updatedDate: props.updatedDate,
+  category: props.category,
+  tags: props.tags,
+  keywords: props.keywords,
+};
+
+const url = props.url;
 
 // Get full URL for the article
 const articleUrl = url || new URL(Astro.url.pathname, Astro.site).href;
 
 // Helper to ensure date is a Date object (handles both Date objects and strings)
-function ensureDate(date: Date | string): Date {
+function ensureDate(date: Date | string | undefined): Date {
+  if (!date) return new Date();
   return date instanceof Date ? date : new Date(date);
 }
 
-const publishedDate = ensureDate(article.publishedDate);
-const updatedDate = article.updatedDate ? ensureDate(article.updatedDate) : publishedDate;
+const publishedDate = ensureDate(article?.publishedDate);
+const updatedDate = article?.updatedDate ? ensureDate(article.updatedDate) : publishedDate;
 
 // Build author array from scholars if available
 const authors = article.scholars?.map(scholar => ({
@@ -32,15 +55,19 @@ const authors = article.scholars?.map(scholar => ({
   "name": "Interfaith Peace Initiative"
 }];
 
-// Build keywords from tags
-const keywords = article.tags?.join(', ') || '';
+// Build keywords from tags (handle both arrays and undefined/null)
+const keywords = (Array.isArray(article.tags) && article.tags.length > 0) ? article.tags.join(', ') : '';
 
-// Create religion-specific context
-const aboutSection = {
+// Create religion-specific context (for teachings) or category context (for articles)
+const aboutSection = article.religion ? {
   "@type": "Thing",
   "name": article.religion.charAt(0).toUpperCase() + article.religion.slice(1),
   "description": `Peace teachings from ${article.religion}`
-};
+} : (article.category ? {
+  "@type": "Thing",
+  "name": article.category,
+  "description": `Article about ${article.category}`
+} : undefined);
 
 // Build parallel teachings relationships if available
 const mentions = article.parallelTeachings?.map(parallel => ({
@@ -53,13 +80,20 @@ const mentions = article.parallelTeachings?.map(parallel => ({
   "description": parallel.similarity
 })) || [];
 
+// Build description (articles use 'description', teachings use 'excerpt')
+const articleDescription = article.description || article.excerpt || `Explore ${article.title}`;
+
+// Build image URL (articles use 'image', teachings use 'featuredImage')
+const imageUrl = (article.image || article.featuredImage) ?
+  new URL(article.image || article.featuredImage, Astro.site).href : undefined;
+
 // Main Article schema
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": article.title,
-  "description": article.excerpt || `Explore ${article.title} - a teaching on peace from ${article.religion}`,
-  "image": article.featuredImage ? new URL(article.featuredImage, Astro.site).href : undefined,
+  "description": articleDescription,
+  "image": imageUrl,
   "datePublished": publishedDate.toISOString(),
   "dateModified": updatedDate.toISOString(),
   "author": authors,
@@ -104,16 +138,18 @@ if (article.sourceText) {
 }
 
 // BreadcrumbList schema for better navigation
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": Astro.site?.href
-    },
+const breadcrumbItems = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": Astro.site?.href
+  }
+];
+
+if (article.religion) {
+  // For teachings: Home > Teachings > Religion > Article
+  breadcrumbItems.push(
     {
       "@type": "ListItem",
       "position": 2,
@@ -132,7 +168,29 @@ const breadcrumbSchema = {
       "name": article.title,
       "item": articleUrl
     }
-  ]
+  );
+} else {
+  // For articles: Home > Articles > Article
+  breadcrumbItems.push(
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": new URL('/articles', Astro.site).href
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": article.title,
+      "item": articleUrl
+    }
+  );
+}
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems
 };
 
 // Combine schemas
@@ -154,9 +212,9 @@ const schemas = [articleSchema, breadcrumbSchema];
 
 <!-- Schema.org metadata for crawlers -->
 <meta itemprop="name" content={article.title} />
-<meta itemprop="description" content={article.excerpt || `Explore ${article.title}`} />
-{article.featuredImage && (
-  <meta itemprop="image" content={new URL(article.featuredImage, Astro.site).href} />
+<meta itemprop="description" content={articleDescription} />
+{imageUrl && (
+  <meta itemprop="image" content={imageUrl} />
 )}
 <meta itemprop="datePublished" content={publishedDate.toISOString()} />
 <meta itemprop="dateModified" content={updatedDate.toISOString()} />

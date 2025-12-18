@@ -1,256 +1,393 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/global.css';
 
-const meta = {
-  title: 'Home',
-  description: 'Exploring universal teachings of peace across Christianity, Islam, Buddhism, Hinduism, and Judaism. Discover wisdom from sacred texts, scholars, and peace advocates.',
-  religion: 'interfaith' as const
-};
+const stats = [
+  { number: '5', label: 'Major Religions', suffix: '+' },
+  { number: '100', label: 'Peace Teachings', suffix: '+' },
+  { number: '30', label: 'Research Articles', suffix: '' },
+  { number: '1000', label: 'Community Members', suffix: '+' },
+];
+
+const features = [
+  {
+    icon: '📖',
+    title: 'Sacred Teachings',
+    description: 'Explore peace teachings from Christianity, Islam, Hinduism, Buddhism, and Judaism',
+    color: 'from-blue-500 to-purple-600',
+    image: '/images/homepage/feature-teachings.png'
+  },
+  {
+    icon: '🤝',
+    title: 'Interfaith Dialogue',
+    description: 'Build bridges between faiths through understanding and shared commitment to peace',
+    color: 'from-green-500 to-teal-600',
+    image: '/images/homepage/feature-community.png'
+  },
+  {
+    icon: '🕊️',
+    title: 'Counter-Extremism',
+    description: 'Evidence-based research empowering moderate voices across all religious traditions',
+    color: 'from-orange-500 to-red-600',
+    image: '/images/homepage/feature-peace-symbol.png'
+  },
+];
 
 const religions = [
-  {
-    name: 'Christianity',
-    slug: 'christianity',
-    title: 'Blessed Are the Peacemakers',
-    description: '"Love your enemies and pray for those who persecute you" — Jesus\'s radical teachings on peace and forgiveness.',
-    image: '/images/religions/christianity-peace.svg',
-    color: '#4A90E2'
-  },
-  {
-    name: 'Islam',
-    slug: 'islam',
-    title: 'Incline to Peace',
-    description: '"If they incline to peace, incline to it" — The Quran\'s emphasis on reconciliation and ending conflict.',
-    image: '/images/religions/islam-peace.svg',
-    color: '#2ECC71'
-  },
-  {
-    name: 'Buddhism',
-    slug: 'buddhism',
-    title: 'Loving-Kindness (Metta)',
-    description: '"Hatred never ceases by hatred, but by love alone" — Buddhist practices of compassion for all beings.',
-    image: '/images/religions/buddhism-peace.svg',
-    color: '#9B59B6'
-  },
-  {
-    name: 'Hinduism',
-    slug: 'hinduism',
-    title: 'Ahimsa (Non-Violence)',
-    description: '"Cause no injury to any living being in deeds, words, or thoughts" — The foundational principle of non-harm.',
-    image: '/images/religions/hinduism-peace.svg',
-    color: '#F39C12'
-  },
-  {
-    name: 'Judaism',
-    slug: 'judaism',
-    title: 'Tikkun Olam',
-    description: '"Repair the world" — The Jewish call to social action and building a more just, peaceful society.',
-    image: '/images/religions/judaism-peace.svg',
-    color: '#3498DB'
-  }
+  { name: 'Christianity', icon: '✝', color: '#4A90E2', emoji: '⛪' },
+  { name: 'Islam', icon: '☪', color: '#2ECC71', emoji: '🕌' },
+  { name: 'Hinduism', icon: 'ॐ', color: '#F39C12', emoji: '🛕' },
+  { name: 'Buddhism', icon: '☸', color: '#9B59B6', emoji: '🏯' },
+  { name: 'Judaism', icon: '✡', color: '#3498DB', emoji: '🕍' },
 ];
 ---
 
-<BaseLayout {...meta}>
-  <div class="min-h-screen">
-    <!-- Hero Section with Stunning Visual -->
-    <section class="relative overflow-hidden">
-      <div class="absolute inset-0">
-        <img
-          src="/images/hero/hero-interfaith-peace.svg"
-          alt="Interfaith Peace"
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div class="relative bg-gradient-to-br from-interfaith/90 to-interfaith-dark/90 py-32 md:py-40">
-        <div class="container">
-          <div class="max-w-5xl mx-auto text-center text-white">
-            <div class="mb-8 animate-fade-in-up">
-              <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 drop-shadow-2xl leading-tight">
-                Peace Across <span class="text-transparent bg-clip-text bg-gradient-to-r from-christianity-light via-islam-light to-buddhism-light">Faiths</span>
-              </h1>
-              <p class="text-xl md:text-3xl mb-10 opacity-95 drop-shadow-lg font-light max-w-3xl mx-auto">
-                Discovering the universal language of peace through the wisdom of five great religions
-              </p>
-            </div>
+<BaseLayout
+  title="Interfaith Peace Initiative - Amplifying Voices of Peace Across All Faiths"
+  description="Explore universal teachings of peace from Christianity, Islam, Hinduism, Buddhism, and Judaism. Evidence-based research, interfaith dialogue, and counter-extremism resources."
+>
+  <!-- Hero Section with Parallax & Animations -->
+  <section class="hero-section relative overflow-hidden min-h-screen flex items-center justify-center">
+    <!-- Animated Background Gradients -->
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
 
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-              <span class="religion-badge bg-christianity/90 backdrop-blur-sm hover:bg-christianity transition-all hover:scale-110 cursor-pointer">Christianity</span>
-              <span class="religion-badge bg-islam/90 backdrop-blur-sm hover:bg-islam transition-all hover:scale-110 cursor-pointer">Islam</span>
-              <span class="religion-badge bg-hinduism/90 backdrop-blur-sm hover:bg-hinduism transition-all hover:scale-110 cursor-pointer">Hinduism</span>
-              <span class="religion-badge bg-buddhism/90 backdrop-blur-sm hover:bg-buddhism transition-all hover:scale-110 cursor-pointer">Buddhism</span>
-              <span class="religion-badge bg-judaism/90 backdrop-blur-sm hover:bg-judaism transition-all hover:scale-110 cursor-pointer">Judaism</span>
-            </div>
+    <!-- Floating Particles -->
+    <div class="particles">
+      {[...Array(30)].map((_, i) => (
+        <div class="particle" style={`--delay: ${i * 0.2}s; --duration: ${5 + Math.random() * 10}s;`}></div>
+      ))}
+    </div>
 
-            <div class="flex flex-col sm:flex-row gap-5 justify-center">
-              <a href="/teachings" class="btn bg-white text-interfaith-dark hover:bg-opacity-95 hover:scale-105 transition-all shadow-2xl text-lg px-8 py-4">
-                🕊️ Explore Teachings
-              </a>
-              <a href="#religions" class="btn bg-interfaith-dark/50 backdrop-blur-sm text-white hover:bg-interfaith-dark transition-all border-2 border-white/50 hover:scale-105 text-lg px-8 py-4">
-                📚 Discover Peace Wisdom
-              </a>
+    <!-- Hero Content -->
+    <div class="hero-content relative z-10 container mx-auto px-4 py-20 text-center">
+      <!-- Animated Title -->
+      <h1 class="hero-title text-6xl md:text-8xl font-black mb-8 leading-tight">
+        <span class="text-gradient animate-gradient">Voices of Peace</span>
+        <br />
+        <span class="text-white opacity-95 text-5xl md:text-7xl font-light">Across All Faiths</span>
+      </h1>
+
+      <!-- Animated Description -->
+      <p class="hero-description text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+        Amplifying moderate religious voices. Building interfaith bridges.
+        <br />
+        <span class="text-gradient-secondary">Empowering peace through understanding.</span>
+      </p>
+
+      <!-- Religion Icons Floating Animation -->
+      <div class="religion-icons flex justify-center items-center gap-6 mb-12">
+        {religions.map((religion, index) => (
+          <div
+            class="religion-icon-wrapper"
+            style={`--delay: ${index * 0.1}s; --color: ${religion.color};`}
+          >
+            <div class="religion-icon glass-morphism">
+              <span class="text-4xl">{religion.emoji}</span>
+              <span class="icon-symbol">{religion.icon}</span>
             </div>
           </div>
-        </div>
+        ))}
       </div>
-      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent"></div>
-    </section>
 
-    <!-- Featured Religions with Stunning Visual Cards -->
-    <section id="religions" class="py-20 bg-bg-primary">
-      <div class="container">
-        <div class="text-center mb-16">
-          <h2 class="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-interfaith via-interfaith-dark to-interfaith">
-            Universal Wisdom on Peace
-          </h2>
-          <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-            Every tradition speaks of peace, compassion, and justice in its own profound way
-          </p>
+      <!-- CTA Buttons -->
+      <div class="cta-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="/teachings" class="btn btn-primary group">
+          <span>Explore Teachings</span>
+          <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        <a href="/articles" class="btn btn-secondary group">
+          <span>Read Research</span>
+          <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
         </div>
+        <p class="text-white/70 text-sm mt-4">Scroll to explore</p>
+      </div>
+    </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {religions.map((religion) => (
-            <article class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div class="absolute inset-0 bg-gradient-to-br opacity-95 transition-opacity group-hover:opacity-100" style={`background: linear-gradient(135deg, ${religion.color}dd, ${religion.color}99)`}></div>
+    <!-- Decorative Wave -->
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+      </svg>
+    </div>
+  </section>
 
-              <div class="relative">
-                <div class="aspect-video overflow-hidden">
-                  <img
-                    src={religion.image}
-                    alt={religion.name}
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
+  <!-- Stats Section with Animated Counters -->
+  <section class="stats-section py-20 bg-white relative overflow-hidden">
+    <div class="stats-pattern"></div>
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat, index) => (
+          <div
+            class="stat-card glass-morphism-light text-center p-8 rounded-2xl hover:scale-110 transition-all duration-500"
+            style={`--delay: ${index * 0.1}s;`}
+          >
+            <div class="stat-number text-5xl md:text-6xl font-black text-gradient mb-2">
+              {stat.number}{stat.suffix}
+            </div>
+            <div class="stat-label text-gray-600 font-medium">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-                <div class="p-8 text-white">
-                  <div class="mb-4">
-                    <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold">
-                      {religion.name}
-                    </span>
+  <!-- Features Section with Glassmorphism Cards -->
+  <section class="features-section py-32 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <h2 class="text-5xl md:text-6xl font-black mb-6">
+          <span class="text-gradient">What We Offer</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Comprehensive resources for peace, understanding, and interfaith cooperation
+        </p>
+      </div>
+
+      <!-- Feature Cards Grid -->
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div
+            class="feature-card group"
+            style={`--delay: ${index * 0.2}s;`}
+          >
+            <div class="feature-card-inner glass-morphism-card rounded-3xl overflow-hidden">
+              <!-- Image Background with Overlay -->
+              <div class="feature-image-wrapper relative h-64 overflow-hidden">
+                <div class={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-90`}></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="feature-icon text-9xl opacity-20 group-hover:scale-125 transition-transform duration-700">
+                    {feature.icon}
                   </div>
-
-                  <h3 class="text-3xl font-bold mb-4 drop-shadow-lg">
-                    {religion.title}
-                  </h3>
-
-                  <p class="text-white/90 mb-6 text-lg leading-relaxed">
-                    {religion.description}
-                  </p>
-
-                  <a
-                    href={`/teachings/${religion.slug}`}
-                    class="inline-flex items-center gap-2 font-semibold text-white hover:gap-4 transition-all group/link"
-                  >
-                    <span>Explore {religion.name} Peace Teachings</span>
-                    <span class="transition-transform group-hover/link:translate-x-1">→</span>
-                  </a>
                 </div>
               </div>
-            </article>
-          ))}
 
-          <!-- Interfaith Card -->
-          <article class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-            <div class="absolute inset-0 bg-gradient-to-br from-interfaith-dark/95 to-interfaith/95 transition-opacity group-hover:opacity-100"></div>
-
-            <div class="relative p-8 h-full flex flex-col justify-center text-white">
-              <div class="mb-6">
-                <div class="text-6xl mb-4">🤝</div>
-                <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold">
-                  Interfaith
-                </span>
+              <!-- Card Content -->
+              <div class="p-8">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class={`feature-icon-small text-5xl`}>
+                    {feature.icon}
+                  </div>
+                  <h3 class="text-2xl font-bold">{feature.title}</h3>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  {feature.description}
+                </p>
+                <a href="#" class="inline-flex items-center text-gradient font-semibold group-hover:gap-4 transition-all">
+                  Learn More
+                  <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
-
-              <h3 class="text-3xl font-bold mb-4">
-                Shared Wisdom
-              </h3>
-
-              <p class="text-white/90 mb-6 text-lg">
-                Discover the common threads of peace, compassion, and justice that unite all faiths in their call for a better world.
-              </p>
-
-              <a
-                href="/teachings"
-                class="inline-flex items-center gap-2 font-semibold text-white hover:gap-4 transition-all group/link"
-              >
-                <span>Compare Peace Teachings</span>
-                <span class="transition-transform group-hover/link:translate-x-1">→</span>
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Mission Section with Icons -->
-    <section class="py-20 bg-gradient-to-br from-bg-secondary to-bg-tertiary">
-      <div class="container">
-        <div class="max-w-5xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-5xl font-bold mb-6">Our Mission</h2>
-            <p class="text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-              Understanding the peace teachings of different religions can bridge divides, foster compassion, and inspire action toward a more harmonious world.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-10">
-            <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-              <div class="text-7xl mb-6">📚</div>
-              <h3 class="text-2xl font-bold mb-4">Scholarly Rigor</h3>
-              <p class="text-text-secondary text-lg leading-relaxed">
-                All teachings reviewed by scholars and experts from each tradition
-              </p>
-            </div>
-
-            <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-              <div class="text-7xl mb-6">🤝</div>
-              <h3 class="text-2xl font-bold mb-4">Interfaith Dialogue</h3>
-              <p class="text-text-secondary text-lg leading-relaxed">
-                Building bridges through respectful comparison and understanding
-              </p>
-            </div>
-
-            <div class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-              <div class="text-7xl mb-6">🕊️</div>
-              <h3 class="text-2xl font-bold mb-4">Practical Peace</h3>
-              <p class="text-text-secondary text-lg leading-relaxed">
-                Connecting ancient wisdom to modern peacebuilding efforts
-              </p>
             </div>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-br from-interfaith to-interfaith-dark text-white">
-      <div class="container">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">Stay Connected</h2>
-          <p class="text-xl mb-10 opacity-90">
-            Receive weekly insights on peace teachings from all traditions
-          </p>
-          <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="flex-1 px-6 py-4 rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-lg"
-            />
-            <button type="submit" class="px-8 py-4 bg-white text-interfaith-dark font-bold rounded-xl hover:bg-opacity-90 transition-all hover:scale-105 shadow-2xl text-lg whitespace-nowrap">
-              Subscribe
-            </button>
-          </form>
-          <p class="mt-6 text-sm opacity-75">
-            🔒 We respect your privacy. Unsubscribe anytime.
-          </p>
-        </div>
+    <!-- Floating Elements -->
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+  </section>
+
+  <!-- CTA Section with Gradient Overlay -->
+  <section class="cta-final-section relative py-32 overflow-hidden">
+    <!-- Animated Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500">
+      <div class="gradient-orb orb-cta-1"></div>
+      <div class="gradient-orb orb-cta-2"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-4 text-center">
+      <h2 class="text-5xl md:text-7xl font-black text-white mb-8">
+        Join the Movement
+      </h2>
+      <p class="text-2xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+        Be part of a global community amplifying voices of peace, building understanding, and countering extremism through education and dialogue.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <a href="/teachings" class="btn btn-white group">
+          <span>Start Exploring</span>
+          <svg class="w-5 h-5 ml-2 transform group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        <a href="/articles" class="btn btn-outline-white group">
+          <span>Read Research</span>
+          <svg class="w-5 h-5 ml-2 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </a>
       </div>
-    </section>
-  </div>
+
+      <!-- Peace Symbol -->
+      <div class="peace-symbol-large mt-20">
+        <svg class="w-32 h-32 mx-auto text-white/30 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
+  /* ===========================
+     HERO SECTION ANIMATIONS
+     =========================== */
+
+  .hero-section {
+    position: relative;
+    background: #000;
+  }
+
+  /* Animated Gradient Orbs */
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    animation: float 20s infinite ease-in-out;
+  }
+
+  .orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #4A90E2, transparent);
+    top: -200px;
+    left: -200px;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #9B59B6, transparent);
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 5s;
+  }
+
+  .orb-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #2ECC71, transparent);
+    top: 50%;
+    left: 50%;
+    animation-delay: 10s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(100px, -100px) scale(1.1);
+    }
+    66% {
+      transform: translate(-100px, 100px) scale(0.9);
+    }
+  }
+
+  /* Floating Particles */
+  .particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: particle-float var(--duration) infinite ease-in-out;
+    animation-delay: var(--delay);
+    left: calc(var(--delay) * 10);
+    top: calc(var(--delay) * 5);
+  }
+
+  @keyframes particle-float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.3;
+    }
+    90% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(100px);
+      opacity: 0;
+    }
+  }
+
+  /* Gradient Text Animation */
+  .text-gradient {
+    background: linear-gradient(
+      45deg,
+      #4A90E2,
+      #2ECC71,
+      #F39C12,
+      #9B59B6,
+      #3498DB
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .text-gradient-secondary {
+    background: linear-gradient(120deg, #fff 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Hero Title Animation */
+  .hero-title {
+    animation: fade-in-up 1s ease-out;
+  }
+
+  .hero-description {
+    animation: fade-in-up 1s ease-out 0.3s both;
+  }
+
   @keyframes fade-in-up {
     from {
       opacity: 0;
@@ -262,7 +399,356 @@ const religions = [
     }
   }
 
-  .animate-fade-in-up {
-    animation: fade-in-up 1s ease-out;
+  /* Religion Icons Animation */
+  .religion-icon-wrapper {
+    animation: fade-in-scale 0.6s ease-out var(--delay) both;
+  }
+
+  .religion-icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .religion-icon:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .icon-symbol {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    color: var(--color);
+  }
+
+  .religion-icon:hover .icon-symbol {
+    opacity: 1;
+  }
+
+  .religion-icon:hover span:first-child {
+    opacity: 0;
+  }
+
+  @keyframes fade-in-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Glassmorphism Effect */
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-morphism-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  }
+
+  .glass-morphism-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .glass-morphism-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+
+  .btn:hover::before {
+    transform: translateX(100%);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+  }
+
+  .btn-white {
+    background: white;
+    color: #667eea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-outline-white:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-3px);
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fade-in 2s ease-out 1s both;
+  }
+
+  .scroll-mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .scroll-wheel {
+    width: 4px;
+    height: 10px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 2s infinite;
+  }
+
+  @keyframes scroll-wheel {
+    0%, 100% {
+      top: 10px;
+      opacity: 1;
+    }
+    100% {
+      top: 30px;
+      opacity: 0;
+    }
+  }
+
+  /* Wave Bottom */
+  .wave-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 120px;
+  }
+
+  /* Stats Section */
+  .stats-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(74, 144, 226, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(46, 204, 113, 0.05) 0%, transparent 50%);
+  }
+
+  .stat-card {
+    animation: fade-in-up 0.8s ease-out var(--delay) both;
+  }
+
+  .stat-number {
+    animation: count-up 2s ease-out var(--delay) both;
+  }
+
+  /* Features Section */
+  .feature-card {
+    animation: fade-in-up 1s ease-out var(--delay) both;
+  }
+
+  .feature-image-wrapper {
+    position: relative;
+    transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .feature-card:hover .feature-image-wrapper {
+    transform: scale(1.05);
+  }
+
+  /* Floating Shapes */
+  .floating-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float-shape 20s infinite ease-in-out;
+  }
+
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+  }
+
+  .shape-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 5s;
+  }
+
+  .shape-3 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    top: 60%;
+    left: 60%;
+    animation-delay: 10s;
+  }
+
+  @keyframes float-shape {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+      transform: translate(50px, -50px) rotate(120deg);
+    }
+    66% {
+      transform: translate(-50px, 50px) rotate(240deg);
+    }
+  }
+
+  /* CTA Final Section */
+  .orb-cta-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+  }
+
+  .orb-cta-2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+    bottom: -150px;
+    left: -150px;
+    animation-delay: 7s;
+  }
+
+  .peace-symbol-large {
+    animation: fade-in 2s ease-out 0.5s both;
+  }
+
+  @keyframes animate-spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: animate-spin-slow 30s linear infinite;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .religion-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .religion-icon-wrapper {
+      font-size: 2rem;
+    }
+
+    .gradient-orb {
+      width: 300px !important;
+      height: 300px !important;
+    }
   }
 </style>
+</BaseLayout>

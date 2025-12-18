@@ -30,6 +30,31 @@ const teachingsCollection = defineCollection({
   })
 });
 
+// Define the articles collection schema
+const articlesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publishedDate: z.date(),
+    updatedDate: z.date().optional(),
+    author: z.string(),
+    category: z.string(),
+    tags: z.array(z.string()),
+    keywords: z.array(z.string()).optional(),
+    targetKeyword: z.string().optional(),
+    searchVolume: z.number().optional(),
+    difficulty: z.string().optional(),
+    featured: z.boolean().default(false),
+    series: z.string().optional(),
+    seriesOrder: z.number().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    relatedArticles: z.array(z.string()).optional(),
+  })
+});
+
 export const collections = {
-  teachings: teachingsCollection
+  teachings: teachingsCollection,
+  articles: articlesCollection
 };
