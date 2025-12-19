@@ -1,0 +1,1285 @@
+================================================================================
+IMAGEN 4 IMAGE GENERATION MASTER PLAN
+INTERFAITH PEACE INITIATIVE - BLOG POST IMAGES
+================================================================================
+
+PROJECT OVERVIEW:
+- Total Posts: 37 (22 Articles + 15 Teachings)
+- Images per Post: 3 (1 Title Image + 2 Content Images)
+- Total Images to Generate: 111 images
+- Image Placement Strategy: Title image in hero section, 2 images in content
+
+PROGRESS TRACKING:
+☐ Not Started  ⏳ In Progress  ✅ Completed
+
+================================================================================
+CATEGORY 1: BUDDHISM (3 TEACHINGS)
+Total Images: 9 (3 posts × 3 images)
+================================================================================
+
+POST 1: Four Noble Truths
+Path: dist/teachings/buddhism/four-noble-truths/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: four-noble-truths-hero.jpg
+Placement: Hero section (top of page)
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Photorealistic image of Buddha statue in meditation pose under bodhi tree at sunrise, golden light filtering through leaves, peaceful temple garden, dharma wheel symbol visible, serene atmosphere, cinematic lighting, 8K quality. Text overlay: 'The Four Noble Truths' in elegant serif font with subtle glow effect"
+Style: Photorealistic, spiritual, warm tones
+Text on Image: YES - "The Four Noble Truths"
+
+[IMAGE 2 - CONTENT]
+Filename: four-noble-truths-meditation.jpg
+Placement: After "Understanding Dukkha" section (around line 67)
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Peaceful meditation scene in Buddhist temple, monks in orange robes meditating in lotus position, soft incense smoke, golden Buddha statues in background, morning light through windows, tranquil atmosphere, photorealistic, cinematic"
+Style: Documentary, authentic, peaceful
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: four-noble-truths-eightfold-path.jpg
+Placement: After "The Eightfold Path" section (around line 86)
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Artistic visualization of the Noble Eightfold Path as a glowing golden pathway spiraling upward, Buddhist symbols and lotus flowers along the path, ethereal light, spiritual journey metaphor, beautiful sacred geometry, digital art style"
+Style: Symbolic, artistic, spiritual
+Text on Image: NO
+
+---
+
+POST 2: Metta Loving-Kindness
+Path: dist/teachings/buddhism/metta-loving-kindness/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: metta-loving-kindness-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Beautiful Buddhist monk with gentle smile radiating golden light from heart chakra, surrounded by glowing lotus flowers, compassionate expression, peaceful garden setting, warm sunset colors, photorealistic, cinematic. Text: 'Metta: Loving-Kindness Meditation' in flowing script"
+Style: Warm, compassionate, photorealistic
+Text on Image: YES - "Metta: Loving-Kindness"
+
+[IMAGE 2 - CONTENT]
+Filename: metta-practice.jpg
+Placement: After "How to Practice Metta" section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Diverse group of people meditating together in circle, hands on hearts, peaceful expressions, soft golden light connecting them, unity and compassion, modern meditation studio with plants, inclusive atmosphere, photorealistic"
+Style: Contemporary, inclusive, warm
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: metta-benefits.jpg
+Placement: After "Benefits of Metta" section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Person with eyes closed in meditation, surrounded by concentric circles of soft light expanding outward, representing loving-kindness spreading to all beings, ethereal and peaceful, spiritual visualization, artistic style"
+Style: Symbolic, peaceful, artistic
+Text on Image: NO
+
+---
+
+POST 3: Hatred Ceases by Love
+Path: dist/teachings/buddhism/hatred-ceases-by-love/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: hatred-ceases-by-love-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Ancient Buddha teaching under tree to diverse followers, dark storm clouds transforming to golden sunlight, metaphor for darkness to light, compassionate Buddha gesture, Pali scripture visible, photorealistic historical scene. Text: 'Hatred Ceases by Love' in ancient-inspired font"
+Style: Historical, transformative, photorealistic
+Text on Image: YES - "Hatred Ceases by Love"
+
+[IMAGE 2 - CONTENT]
+Filename: hatred-ceases-transformation.jpg
+Placement: After main teaching explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Visual metaphor: dark thorny vines transforming into blooming lotus flowers, light breaking through darkness, symbol of love overcoming hatred, beautiful gradient from dark to light, artistic spiritual illustration"
+Style: Metaphorical, artistic, transformative
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: hatred-ceases-practice.jpg
+Placement: After practical application section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Two people reconciling, extending hands in forgiveness, warm golden light between them, peaceful modern setting, emotional healing moment, diverse individuals, photorealistic, cinematic"
+Style: Contemporary, emotional, authentic
+Text on Image: NO
+
+================================================================================
+CATEGORY 2: CHRISTIANITY (6 POSTS - 3 TEACHINGS + 3 ARTICLES)
+Total Images: 18 (6 posts × 3 images)
+================================================================================
+
+POST 4: Beatitudes
+Path: dist/teachings/christianity/beatitudes/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: beatitudes-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Jesus teaching the Beatitudes on mountain to crowd, Sermon on the Mount scene, biblical historical accuracy, Mediterranean landscape, golden hour lighting, disciples taking notes, reverent atmosphere, cinematic biblical epic style. Text: 'The Beatitudes' in classical serif font"
+Style: Biblical epic, historical, cinematic
+Text on Image: YES - "The Beatitudes"
+
+[IMAGE 2 - CONTENT]
+Filename: beatitudes-blessed.jpg
+Placement: After explanation of blessings
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Nine glowing tablets arranged in circle showing the nine Beatitudes, ethereal light emanating from them, sacred geometry pattern, spiritual art style, gold and blue tones"
+Style: Symbolic, sacred art, spiritual
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: beatitudes-mountain.jpg
+Placement: After modern application section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Beautiful mountain overlook at sunrise, person in contemplation looking at vast landscape below, metaphor for spiritual perspective, inspirational scene, photorealistic"
+Style: Inspirational, landscape, photorealistic
+Text on Image: NO
+
+---
+
+POST 5: Love Your Enemies
+Path: dist/teachings/christianity/love-your-enemies/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: love-enemies-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Jesus teaching radical love, extending hands in blessing gesture toward diverse group including Romans and tax collectors, revolutionary message visible in disciples' expressions, biblical setting, cinematic. Text: 'Love Your Enemies' in bold compassionate font"
+Style: Biblical, revolutionary, photorealistic
+Text on Image: YES - "Love Your Enemies"
+
+[IMAGE 2 - CONTENT]
+Filename: love-enemies-reconciliation.jpg
+Placement: After teaching explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Two people from conflicting backgrounds embracing in forgiveness, broken wall between them, light breaking through, symbolic of reconciliation, modern setting, diverse individuals, powerful emotional moment, photorealistic"
+Style: Symbolic, contemporary, powerful
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: love-enemies-practice.jpg
+Placement: After practical application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Hands of different ethnicities joined together in circle, unity symbol, golden light in center, overhead view, represents universal love transcending differences, photorealistic"
+Style: Symbolic, inclusive, hopeful
+Text on Image: NO
+
+---
+
+POST 6: Turn the Other Cheek
+Path: dist/teachings/christianity/turn-other-cheek/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: turn-other-cheek-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Jesus demonstrating peaceful resistance, standing with dignity before aggressor, biblical historical scene, powerful nonviolent stance, disciples observing, Mediterranean setting, cinematic lighting. Text: 'Turn the Other Cheek' in strong serif font"
+Style: Biblical, dignified, powerful
+Text on Image: YES - "Turn the Other Cheek"
+
+[IMAGE 2 - CONTENT]
+Filename: turn-other-cheek-nonviolence.jpg
+Placement: After teaching explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Martin Luther King Jr. and Gandhi in artistic composite, peaceful protest imagery, civil rights marchers with dignity, historical photographs montage, black and white transitioning to color, powerful documentary style"
+Style: Historical, documentary, powerful
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: turn-other-cheek-courage.jpg
+Placement: After modern examples
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Person standing with quiet strength and dignity in challenging situation, modern setting, peaceful warrior archetype, inner light visible, photorealistic, cinematic"
+Style: Contemporary, empowering, cinematic
+Text on Image: NO
+
+---
+
+POST 7: Blessed Are the Peacemakers (Article)
+Path: dist/articles/blessed-are-the-peacemakers/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: blessed-peacemakers-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Jesus teaching Matthew 5:9 on mountain, disciples listening intently, 'Blessed are the peacemakers' written in ancient Greek visible on scroll, biblical scene, golden hour, Mediterranean landscape, reverent atmosphere. Text: 'Blessed Are the Peacemakers' in elegant font"
+Style: Biblical, scholarly, cinematic
+Text on Image: YES - "Blessed Are the Peacemakers"
+
+[IMAGE 2 - CONTENT]
+Filename: blessed-peacemakers-examples.jpg
+Placement: After historical examples section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Collage of historical peacemakers: St. Francis with animals, Martin Luther King Jr. speaking, Mother Teresa serving, modern peace activists, diverse ages and backgrounds, inspiring compilation, documentary style"
+Style: Historical montage, inspiring
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: blessed-peacemakers-practice.jpg
+Placement: After practical peacemaking section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Community mediators helping resolve conflict, diverse people listening to each other with empathy, modern community center, healing circle, authentic documentary photography, hope and reconciliation"
+Style: Documentary, contemporary, hopeful
+Text on Image: NO
+
+---
+
+POST 8: Jesus Teachings on Peace (Article)
+Path: dist/articles/jesus-teachings-on-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: jesus-teachings-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Jesus teaching peace to multitude, gentle authoritative presence, hands raised in blessing, diverse crowd listening, ancient Israel setting, golden light, scrolls and scriptures visible, epic biblical scene. Text: 'Jesus's Teachings on Peace' in classic font"
+Style: Biblical epic, authoritative, warm
+Text on Image: YES - "Jesus's Teachings on Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: jesus-peace-parables.jpg
+Placement: After parables section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Illuminated manuscript style artwork showing Jesus's peace teachings, Good Samaritan helping wounded traveler, medieval art style with gold leaf, beautiful sacred art"
+Style: Medieval art, illuminated manuscript
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: jesus-peace-prince.jpg
+Placement: After 'Prince of Peace' section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Jesus as Prince of Peace, crown of light not thorns, dove descending, olive branches, peaceful landscape, symbolic Christian art, Renaissance painting style, majestic and serene"
+Style: Renaissance, symbolic, majestic
+Text on Image: NO
+
+---
+
+POST 9: Sermon on the Mount Peace (Article)
+Path: dist/articles/sermon-on-the-mount-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: sermon-mount-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Epic wide shot of Jesus preaching Sermon on the Mount, thousands gathered on hillside, Sea of Galilee in background, dramatic sky, biblical epic cinematography, historically accurate first century Israel. Text: 'Sermon on the Mount' in grand font"
+Style: Biblical epic, panoramic, cinematic
+Text on Image: YES - "Sermon on the Mount"
+
+[IMAGE 2 - CONTENT]
+Filename: sermon-mount-teachings.jpg
+Placement: After main teachings section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Ancient scroll unfurled showing the Beatitudes in Aramaic and Greek, candle light illuminating text, scholar's desk with other ancient manuscripts, atmospheric historical setting"
+Style: Historical, scholarly, atmospheric
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: sermon-mount-modern.jpg
+Placement: After modern application section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Modern believers studying the Sermon on the Mount in diverse small group, open Bibles, discussion and learning, coffee shop or home setting, contemporary Christian community, authentic and warm"
+Style: Contemporary, community, authentic
+Text on Image: NO
+
+================================================================================
+CATEGORY 3: HINDUISM (4 POSTS - 3 TEACHINGS + 1 ARTICLE)
+Total Images: 12 (4 posts × 3 images)
+================================================================================
+
+POST 10: Ahimsa Nonviolence
+Path: dist/teachings/hinduism/ahimsa-nonviolence/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: ahimsa-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Gandhi in meditation pose with hands in prayer, Om Ahimsa symbol glowing above, surrounded by peaceful nature, doves flying, lotus flowers blooming, spiritual light emanating, photorealistic with spiritual elements. Text: 'Ahimsa: Nonviolence' in Sanskrit-inspired font"
+Style: Spiritual, photorealistic, peaceful
+Text on Image: YES - "Ahimsa: Nonviolence"
+
+[IMAGE 2 - CONTENT]
+Filename: ahimsa-gandhi.jpg
+Placement: After Gandhi section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Historical photograph style image of Gandhi leading Salt March, peaceful protesters walking with dignity, iconic moment of nonviolent resistance, black and white photography with subtle color, documentary style"
+Style: Historical documentary, iconic
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: ahimsa-practice.jpg
+Placement: After practical application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Person gently releasing butterfly, metaphor for ahimsa and respect for all life, beautiful natural lighting, close-up hands, symbolic of compassion, photorealistic, serene"
+Style: Metaphorical, gentle, photorealistic
+Text on Image: NO
+
+---
+
+POST 11: Divine in All Beings
+Path: dist/teachings/hinduism/divine-in-all-beings/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: divine-beings-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Artistic visualization of divine light emanating from within diverse human silhouettes, cosmic background, interconnected energy, Hindu concept of Atman and Brahman, spiritual art, golden and purple tones, ethereal. Text: 'The Divine in All Beings' in flowing font"
+Style: Spiritual art, cosmic, ethereal
+Text on Image: YES - "The Divine in All Beings"
+
+[IMAGE 2 - CONTENT]
+Filename: divine-beings-namaste.jpg
+Placement: After Namaste explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Two people bowing in Namaste gesture, subtle divine light visible in heart chakra of both, recognition of divinity in each other, spiritual connection, warm lighting, photorealistic with spiritual overlay"
+Style: Spiritual, reverent, photorealistic
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: divine-beings-unity.jpg
+Placement: After unity teaching
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Mandala of diverse faces from all cultures arranged in circle, each person with third eye chakra glowing, representing universal divine consciousness, beautiful sacred geometry, artistic spiritual illustration"
+Style: Sacred geometry, inclusive, artistic
+Text on Image: NO
+
+---
+
+POST 12: Gita Inner Peace
+Path: dist/teachings/hinduism/gita-inner-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: gita-inner-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Krishna teaching Arjuna on battlefield, chariot scene from Bhagavad Gita, divine light surrounding Krishna, ancient India setting, epic spiritual moment, photorealistic with divine elements. Text: 'Bhagavad Gita: Inner Peace' in Sanskrit-inspired elegant font"
+Style: Epic, spiritual, photorealistic
+Text on Image: YES - "Bhagavad Gita: Inner Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: gita-karma-yoga.jpg
+Placement: After Karma Yoga section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Person performing work as meditation, hands engaged in mindful task, golden light around hands, modern setting showing sacred in ordinary work, concept of Karma Yoga, photorealistic"
+Style: Contemporary, spiritual, photorealistic
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: gita-meditation.jpg
+Placement: After meditation teachings
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Ancient Bhagavad Gita manuscript open with Sanskrit text visible, oil lamp illuminating pages, incense smoke, traditional study setting, historically accurate, warm atmospheric lighting"
+Style: Historical, atmospheric, reverent
+Text on Image: NO
+
+---
+
+POST 13: Hinduism and Peace (Article)
+Path: dist/articles/hinduism-and-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: hinduism-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Om Shanti symbol with lotus flower mandala, divine light rays, sacred Hindu symbols for peace, vibrant colors of saffron orange and deep blue, spiritual art style, beautiful and serene. Text: 'Hinduism & Peace' in elegant Sanskrit-inspired font"
+Style: Sacred art, vibrant, symbolic
+Text on Image: YES - "Hinduism & Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: hinduism-peace-practices.jpg
+Placement: After peace practices section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Indian sage performing puja ceremony for peace, flower offerings, incense, traditional Hindu peace ritual, authentic cultural scene, respectful photography, warm lighting"
+Style: Cultural, authentic, respectful
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: hinduism-peace-modern.jpg
+Placement: After modern application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Modern Hindu temple with diverse devotees in peaceful prayer, contemporary setting, yoga and meditation spaces, inclusive spiritual community, photorealistic"
+Style: Contemporary, inclusive, photorealistic
+Text on Image: NO
+
+================================================================================
+CATEGORY 4: ISLAM (6 POSTS - 3 TEACHINGS + 3 ARTICLES)
+Total Images: 18 (6 posts × 3 images)
+================================================================================
+
+POST 14: Inclining to Peace
+Path: dist/teachings/islam/inclining-to-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: inclining-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Beautiful mosque at golden hour, peaceful courtyard with fountain, doves flying, crescent moon and star symbol, Islamic geometric patterns, Arabic calligraphy of peace verse from Quran, serene atmosphere. Text: 'Inclining to Peace' in elegant Arabic-inspired font"
+Style: Islamic art, peaceful, majestic
+Text on Image: YES - "Inclining to Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: inclining-peace-quran.jpg
+Placement: After Quranic verse explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Open Quran with illuminated Arabic calligraphy of peace verse (8:61), soft light illuminating pages, prayer beads nearby, traditional Islamic manuscript art style, reverent atmosphere"
+Style: Islamic manuscript art, reverent
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: inclining-peace-practice.jpg
+Placement: After practical application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Muslims performing Salaam greeting, touching hearts, diverse Muslims in modern setting, unity and brotherhood, warm lighting, photorealistic, respectful"
+Style: Contemporary, authentic, warm
+Text on Image: NO
+
+---
+
+POST 15: Repel Evil with Good
+Path: dist/teachings/islam/repel-evil-with-good/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: repel-evil-good-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Islamic concept of goodness overcoming evil, Arabic calligraphy of Quran 41:34, light breaking through darkness, beautiful Islamic geometric patterns transforming from chaos to order, symbolic art. Text: 'Repel Evil with Good' in flowing Arabic-inspired script"
+Style: Symbolic Islamic art, transformative
+Text on Image: YES - "Repel Evil with Good"
+
+[IMAGE 2 - CONTENT]
+Filename: repel-evil-good-teaching.jpg
+Placement: After teaching explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Prophet Muhammad teaching compassion to companions, historical Islamic art style, traditional Persian miniature painting influence, beautiful colors and patterns, respectful representation"
+Style: Islamic historical art, Persian miniature
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: repel-evil-good-modern.jpg
+Placement: After modern examples
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Muslim community member helping someone in need, act of charity and kindness, modern urban setting, diverse community, documentary style photography, authentic and warm"
+Style: Documentary, contemporary, authentic
+Text on Image: NO
+
+---
+
+POST 16: Reconciliation Believers
+Path: dist/teachings/islam/reconciliation-believers/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: reconciliation-believers-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Muslims reconciling in peaceful mediation, Islamic symbol of brotherhood, mosque courtyard setting, hands joined in unity, Arabic calligraphy of Quran verse about reconciliation, warm Islamic art style. Text: 'Reconciliation of Believers' in elegant font"
+Style: Islamic art, peaceful, united
+Text on Image: YES - "Reconciliation of Believers"
+
+[IMAGE 2 - CONTENT]
+Filename: reconciliation-believers-ummah.jpg
+Placement: After Ummah concept section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Diverse global Muslim community praying together, different ethnicities and cultures united, beautiful mosque with people from all backgrounds, unity in diversity, photorealistic, inspiring"
+Style: Inclusive, global, inspiring
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: reconciliation-believers-practice.jpg
+Placement: After practical steps
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Muslim mediators helping two parties reconcile, respectful listening, community elders facilitating peace, traditional and modern elements, documentary style, authentic"
+Style: Documentary, respectful, authentic
+Text on Image: NO
+
+---
+
+POST 17: Peace in Islam (Article)
+Path: dist/articles/peace-in-islam/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: peace-islam-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Majestic mosque at sunset with 'As-Salaam' (The Peace) - one of 99 names of Allah - in golden Arabic calligraphy, dove flying against dramatic sky, Islamic geometric art patterns, peaceful and majestic. Text: 'Peace in Islam' in bold elegant font"
+Style: Majestic, Islamic art, symbolic
+Text on Image: YES - "Peace in Islam"
+
+[IMAGE 2 - CONTENT]
+Filename: peace-islam-names.jpg
+Placement: After 99 Names section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Beautiful Islamic calligraphy artwork showing the 99 Names of Allah arranged in mandala pattern, As-Salaam highlighted, gold and deep blue colors, sacred Islamic art, masterpiece"
+Style: Islamic calligraphy art, sacred
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: peace-islam-prophet.jpg
+Placement: After Prophet Muhammad section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Historical representation of Prophet Muhammad's peace treaties, Islamic art style showing document signing scene, traditional Persian/Arab artistic style, respectful representation without depicting face"
+Style: Historical Islamic art, respectful
+Text on Image: NO
+
+---
+
+POST 18: Quran Peace Teachings (Article)
+Path: dist/articles/quran-peace-teachings/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: quran-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Open Quran with Arabic text illuminated, peace verses highlighted in gold, soft divine light emanating from pages, prayer mat and mosque background, reverent Islamic atmosphere. Text: 'Quran: Teachings on Peace' in Arabic-inspired font"
+Style: Sacred, reverent, illuminated
+Text on Image: YES - "Quran: Teachings on Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: quran-peace-verses.jpg
+Placement: After verse compilation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Beautiful Islamic manuscript page showing multiple Quranic peace verses in classical Arabic calligraphy, gold illumination, traditional Islamic manuscript art, museum quality"
+Style: Islamic manuscript art, classical
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: quran-peace-study.jpg
+Placement: After scholarly commentary
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Islamic scholar studying Quran in traditional library, surrounded by ancient manuscripts and Islamic texts, warm candlelight, peaceful scholarly atmosphere, photorealistic"
+Style: Scholarly, traditional, photorealistic
+Text on Image: NO
+
+---
+
+POST 19: Quran Verses About Peace (Article)
+Path: dist/articles/quran-verses-about-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: quran-verses-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "50+ Quranic verses about peace visualized as golden Arabic calligraphy flowing in artistic pattern, mosque dome background, stars and crescent moon, majestic Islamic art composition. Text: '50+ Quran Verses on Peace' in elegant font"
+Style: Islamic art, flowing, majestic
+Text on Image: YES - "50+ Verses on Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: quran-verses-salaam.jpg
+Placement: After Salaam meaning section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Word 'Salaam' in multiple styles of Arabic calligraphy showing different artistic interpretations, Islamic art gallery style, beautiful variations, educational and artistic"
+Style: Calligraphic art, educational
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: quran-verses-application.jpg
+Placement: After modern application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Modern Muslim community gathering for interfaith peace dialogue, diverse participants, contemporary setting, hopeful atmosphere, documentary style photography"
+Style: Contemporary, interfaith, hopeful
+Text on Image: NO
+
+================================================================================
+CATEGORY 5: JUDAISM (4 POSTS - 3 TEACHINGS + 1 ARTICLE)
+Total Images: 12 (4 posts × 3 images)
+================================================================================
+
+POST 20: Seek and Pursue Peace
+Path: dist/teachings/judaism/seek-pursue-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: seek-pursue-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Rabbi teaching from Torah about peace, Hebrew text of 'Bakesh Shalom v'Rodfehu' (Seek peace and pursue it) visible, synagogue setting, Star of David, menorah, warm candlelight, Jewish wisdom tradition. Text: 'Seek and Pursue Peace' in Hebrew-inspired font"
+Style: Traditional Jewish, warm, scholarly
+Text on Image: YES - "Seek and Pursue Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: seek-pursue-peace-torah.jpg
+Placement: After Torah explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Ancient Torah scroll open showing Hebrew text of peace verse, pointer (yad) indicating text, traditional synagogue setting, scholarly atmosphere, photorealistic with reverent lighting"
+Style: Traditional, scholarly, reverent
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: seek-pursue-peace-practice.jpg
+Placement: After practical application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Jewish peace activists working for justice, diverse group including rabbis and community members, modern activism merged with ancient tradition, documentary photography, inspiring"
+Style: Documentary, contemporary, inspiring
+Text on Image: NO
+
+---
+
+POST 21: Tikkun Olam
+Path: dist/teachings/judaism/tikkun-olam/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: tikkun-olam-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Hands repairing broken Earth, golden light healing cracks, metaphor for Tikkun Olam (repairing the world), Star of David symbol, Hebrew calligraphy, spiritual Jewish art style. Text: 'Tikkun Olam: Repair the World' in Hebrew-inspired font"
+Style: Metaphorical, Jewish art, hopeful
+Text on Image: YES - "Tikkun Olam: Repair the World"
+
+[IMAGE 2 - CONTENT]
+Filename: tikkun-olam-service.jpg
+Placement: After concept explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Jewish volunteers engaged in community service, building homes, feeding hungry, social justice work, diverse group of all ages, documentary style showing sacred work of repair, inspiring"
+Style: Documentary, service, inspiring
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: tikkun-olam-wisdom.jpg
+Placement: After rabbinic wisdom section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Ancient Jewish sages discussing Talmud, historical representation, traditional study house (beit midrash), scrolls and texts, scholarly debate, warm lighting, historically respectful"
+Style: Historical, scholarly, traditional
+Text on Image: NO
+
+---
+
+POST 22: Swords into Plowshares
+Path: dist/teachings/judaism/swords-into-plowshares/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: swords-plowshares-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Visual metaphor of sword being forged into plowshare, blacksmith transforming weapon into farming tool, Isaiah's prophecy visualized, powerful symbolic image, dramatic lighting. Text: 'Swords into Plowshares' in strong prophetic font"
+Style: Metaphorical, powerful, symbolic
+Text on Image: YES - "Swords into Plowshares"
+
+[IMAGE 2 - CONTENT]
+Filename: swords-plowshares-isaiah.jpg
+Placement: After Isaiah prophecy explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Prophet Isaiah with scroll in ancient Jerusalem, prophetic vision of peace, historically accurate biblical scene, olive trees and peaceful landscape, artistic biblical illustration"
+Style: Biblical art, prophetic, historical
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: swords-plowshares-un.jpg
+Placement: After modern application (UN statue)
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "UN 'Let Us Beat Swords into Plowshares' statue in New York, iconic peace monument, international diplomacy symbol, photorealistic architecture photography, hopeful"
+Style: Architectural, documentary, symbolic
+Text on Image: NO
+
+---
+
+POST 23: Judaism and Peace (Article)
+Path: dist/articles/judaism-and-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: judaism-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Hebrew word 'Shalom' in beautiful calligraphy with olive branch and Star of David, dove of peace, traditional Jewish symbols unified, blue and white with gold accents, sacred Jewish art. Text: 'Judaism & Peace: Shalom' in Hebrew-inspired elegant font"
+Style: Sacred Jewish art, peaceful, symbolic
+Text on Image: YES - "Judaism & Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: judaism-peace-shalom.jpg
+Placement: After Shalom concept explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Multiple artistic representations of the word Shalom in different styles of Hebrew calligraphy, artistic compilation, educational and beautiful, Jewish art traditions"
+Style: Calligraphic art, educational
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: judaism-peace-prophets.jpg
+Placement: After prophetic vision section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Jewish prophets' vision of universal peace, artistic representation of Isaiah's peaceful kingdom, lion lying with lamb, symbolic Jewish art, beautiful and hopeful illustration"
+Style: Symbolic Jewish art, prophetic, hopeful
+Text on Image: NO
+
+================================================================================
+CATEGORY 6: INTERFAITH (3 POSTS - ALL ARTICLES)
+Total Images: 9 (3 posts × 3 images)
+================================================================================
+
+POST 24: Interfaith Peace Comparison
+Path: dist/articles/interfaith-peace-comparison/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: interfaith-comparison-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Five major world religion symbols united in circle - Christian cross, Islamic crescent, Hindu Om, Buddhist dharma wheel, Jewish Star of David - glowing with divine light, interconnected energy, peaceful unity, inspiring interfaith art. Text: 'Interfaith Peace: 5 Religions United' in universal font"
+Style: Symbolic, unified, inspiring
+Text on Image: YES - "Interfaith Peace Comparison"
+
+[IMAGE 2 - CONTENT]
+Filename: interfaith-comparison-teachings.jpg
+Placement: After comparative teachings section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Five sacred texts arranged together - Bible, Quran, Bhagavad Gita, Buddhist sutras, Torah - each open showing peace teachings, respectful scholarly arrangement, warm library lighting, unity in diversity"
+Style: Scholarly, respectful, symbolic
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: interfaith-comparison-dialogue.jpg
+Placement: After interfaith dialogue section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Religious leaders from different faiths sitting together in dialogue, Christian priest, Muslim imam, Buddhist monk, Hindu swami, Jewish rabbi, respectful conversation, modern interfaith setting, hopeful and unifying"
+Style: Documentary, contemporary, unifying
+Text on Image: NO
+
+---
+
+POST 25: Jesus in Islam
+Path: dist/articles/jesus-in-islam/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: jesus-islam-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Islamic artistic representation of Prophet Isa (Jesus), respectful Islamic art style without depicting face, Arabic calligraphy of 'Isa ibn Maryam', Quranic verses about Jesus, Islamic and Christian symbols peacefully coexisting. Text: 'Jesus (Isa) in Islam' in Arabic-Christian fusion font"
+Style: Islamic art, respectful, interfaith
+Text on Image: YES - "Jesus (Isa) in Islam"
+
+[IMAGE 2 - CONTENT]
+Filename: jesus-islam-quran.jpg
+Placement: After Quranic mentions
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Quran page showing verses about Isa (Jesus), Arabic calligraphy highlighting 'Isa', 'Maryam' (Mary), beautiful Islamic manuscript art, educational and reverent"
+Style: Islamic manuscript art, educational
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: jesus-islam-bridge.jpg
+Placement: After interfaith bridge section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Christians and Muslims in peaceful dialogue about Jesus/Isa, sharing perspectives respectfully, modern interfaith meeting, books open showing Bible and Quran, bridge-building moment, documentary style"
+Style: Documentary, interfaith, hopeful
+Text on Image: NO
+
+---
+
+POST 26: Jesus in Quran Complete List
+Path: dist/articles/jesus-quran-complete-list/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: jesus-quran-list-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "25 verses about Jesus in Quran visualized as golden Arabic calligraphy flowing in spiral pattern, Islamic and Christian artistic elements harmonized, interfaith scholarship, beautiful and scholarly. Text: 'Jesus in Quran: All 25 Mentions' in bilingual font"
+Style: Scholarly, interfaith, artistic
+Text on Image: YES - "All 25 Quranic Mentions of Jesus"
+
+[IMAGE 2 - CONTENT]
+Filename: jesus-quran-list-verses.jpg
+Placement: After verse list begins
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Islamic manuscript page showing compilation of Quranic verses about Isa, organized by surah, Arabic text with translation notes, scholarly Islamic manuscript style, educational"
+Style: Manuscript art, scholarly, educational
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: jesus-quran-list-mary.jpg
+Placement: After virgin birth section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Islamic art depicting Maryam (Mary) with baby Isa, respectful Islamic artistic tradition, no faces shown, symbolic representation, beautiful patterns and colors, sacred art"
+Style: Islamic sacred art, respectful, symbolic
+Text on Image: NO
+
+================================================================================
+CATEGORY 7: COUNTER-EXTREMISM (7 ARTICLES)
+Total Images: 21 (7 posts × 3 images)
+================================================================================
+
+POST 27: Psychology of Extremism
+Path: dist/articles/psychology-of-extremism/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: psychology-extremism-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Brain scan imagery merged with psychological concept visualization, pathways of radicalization illustrated scientifically, academic research style, clinical yet accessible, blue and red tones showing neural patterns. Text: 'Psychology of Extremism' in bold scientific font"
+Style: Scientific, clinical, academic
+Text on Image: YES - "Psychology of Extremism"
+
+[IMAGE 2 - CONTENT]
+Filename: psychology-extremism-factors.jpg
+Placement: After psychological factors section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Infographic-style visualization of psychological factors in extremism, cognitive biases illustrated, identity fusion concept, research-based diagrams, educational and clear, professional academic style"
+Style: Infographic, educational, research-based
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: psychology-extremism-prevention.jpg
+Placement: After prevention section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Mental health professional counseling at-risk youth, preventive intervention scene, hope and rehabilitation, diverse counselor and client, modern clinical setting, documentary photography showing hope"
+Style: Documentary, hopeful, professional
+Text on Image: NO
+
+---
+
+POST 28: Religious Extremism All Faiths
+Path: dist/articles/religious-extremism-all-faiths/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: extremism-all-faiths-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Symbols of world religions with warning imagery showing extremism as universal problem, academic comparative analysis visualization, serious but hopeful tone, educational infographic style. Text: 'Extremism Across All Faiths' in strong analytical font"
+Style: Academic, comparative, serious
+Text on Image: YES - "Extremism Across All Faiths"
+
+[IMAGE 2 - CONTENT]
+Filename: extremism-all-faiths-comparison.jpg
+Placement: After comparative analysis
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Academic chart showing patterns of extremism across different religions, scholarly comparative visualization, research-based infographic, neutral academic style, educational"
+Style: Academic, infographic, neutral
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: extremism-all-faiths-solutions.jpg
+Placement: After solutions section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Interfaith coalition against extremism, diverse religious leaders united against radicalization, press conference or public statement, modern setting, powerful unity message, documentary style"
+Style: Documentary, unifying, powerful
+Text on Image: NO
+
+---
+
+POST 29: Who Are the Moderates
+Path: dist/articles/who-are-the-moderates/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: moderates-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Diverse moderate religious leaders from different faiths standing together, interfaith unity, hopeful and inspiring, portraits of real peace activists, documentary photography style, powerful and dignified. Text: 'Who Are the Moderates?' in bold inclusive font"
+Style: Documentary, inspiring, dignified
+Text on Image: YES - "Who Are the Moderates?"
+
+[IMAGE 2 - CONTENT]
+Filename: moderates-spectrum.jpg
+Placement: After spectrum explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Visualization of religious belief spectrum from secular to moderate to extremist, educational infographic, clear and academic, showing moderate center as largest group, research-based"
+Style: Infographic, educational, academic
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: moderates-voices.jpg
+Placement: After amplifying voices section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Moderate religious leader speaking at peace rally, crowd of diverse supporters, grassroots peace movement, contemporary activism, documentary photography, inspiring and hopeful"
+Style: Documentary, grassroots, inspiring
+Text on Image: NO
+
+---
+
+POST 30: What is Religious Extremism
+Path: dist/articles/what-is-religious-extremism/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: what-is-extremism-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Academic conceptual visualization showing three overlapping circles - conservatism, fundamentalism, extremism - Venn diagram style, educational infographic, clear definitions, scholarly approach. Text: 'What Is Religious Extremism?' in academic font"
+Style: Academic, infographic, clear
+Text on Image: YES - "What Is Religious Extremism?"
+
+[IMAGE 2 - CONTENT]
+Filename: what-is-extremism-definitions.jpg
+Placement: After definitions section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Educational chart distinguishing fundamentalism vs extremism, key differences highlighted, scholarly visualization, research-based academic infographic, neutral and clear"
+Style: Educational chart, scholarly, neutral
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: what-is-extremism-warning-signs.jpg
+Placement: After warning signs section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Community educator teaching about radicalization warning signs, classroom or community center setting, diverse audience, educational workshop, documentary style, preventive education"
+Style: Documentary, educational, preventive
+Text on Image: NO
+
+---
+
+POST 31: Belief Spectrum Moderate Extremist
+Path: dist/articles/belief-spectrum-moderate-extremist/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: belief-spectrum-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Visual spectrum showing 7 levels from secular to extremist, color gradient from blue (secular) through green (moderate) to red (extremist), interactive educational visualization, clear labels. Text: 'The Belief Spectrum' in clear analytical font"
+Style: Educational, gradient, interactive-looking
+Text on Image: YES - "The Belief Spectrum"
+
+[IMAGE 2 - CONTENT]
+Filename: belief-spectrum-assessment.jpg
+Placement: After self-assessment section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Person taking self-assessment questionnaire, introspective moment, educational tool visualization, modern clean design, self-awareness concept, helpful and non-judgmental"
+Style: Modern, educational, introspective
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: belief-spectrum-prevention.jpg
+Placement: After prevention strategies
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Support group or counseling session helping prevent radicalization, circle of trust, community support, diverse participants, hopeful intervention, documentary photography"
+Style: Documentary, supportive, hopeful
+Text on Image: NO
+
+---
+
+POST 32: How Extremists Recruit
+Path: dist/articles/how-extremists-recruit/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: extremist-recruitment-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "5-stage recruitment funnel visualized as dramatic diagram, psychological manipulation tactics exposed, investigative journalism style, serious warning imagery, dark tones with warning red accents. Text: 'How Extremists Recruit' in bold investigative font"
+Style: Investigative, serious, diagram-focused
+Text on Image: YES - "How Extremists Recruit"
+
+[IMAGE 2 - CONTENT]
+Filename: extremist-recruitment-tactics.jpg
+Placement: After tactics explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Infographic showing online radicalization tactics, social media manipulation strategies, grooming stages illustrated, educational warning visualization, investigative style"
+Style: Infographic, warning, educational
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: extremist-recruitment-prevention.jpg
+Placement: After prevention section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Parents and educators learning to identify recruitment signs, community training session, awareness education, protective measures, documentary photography, empowering"
+Style: Documentary, educational, empowering
+Text on Image: NO
+
+---
+
+POST 33: Root Causes Religious Extremism
+Path: dist/articles/root-causes-religious-extremism/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: root-causes-extremism-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Interconnected web diagram showing 10 root causes of religious extremism, complex systems visualization, academic research style, each cause as node in network, serious analytical tone. Text: '10 Root Causes of Extremism' in academic font"
+Style: Academic, network diagram, analytical
+Text on Image: YES - "10 Root Causes of Extremism"
+
+[IMAGE 2 - CONTENT]
+Filename: root-causes-extremism-factors.jpg
+Placement: After causes explanation
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Detailed infographic showing socioeconomic factors, political grievances, identity crises - multi-layered causation model, research-based academic visualization, educational"
+Style: Academic infographic, research-based
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: root-causes-extremism-solutions.jpg
+Placement: After solutions section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Community development program addressing root causes, education, economic opportunity, youth empowerment, grassroots prevention work, documentary photography showing hope and progress"
+Style: Documentary, hopeful, grassroots
+Text on Image: NO
+
+================================================================================
+CATEGORY 8: BIBLICAL THEOLOGY & BIBLICAL PEACE (4 ARTICLES)
+Total Images: 12 (4 posts × 3 images)
+================================================================================
+
+POST 34: Bible Verses About Peace
+Path: dist/articles/bible-verses-about-peace/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: bible-verses-peace-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Open Bible with 50+ peace verses highlighted in gold, divine light shining on pages, dove flying above, olive branch, beautiful religious art, inspirational and sacred. Text: '50+ Bible Verses on Peace' in classic serif font"
+Style: Sacred Christian art, inspirational
+Text on Image: YES - "50+ Bible Verses on Peace"
+
+[IMAGE 2 - CONTENT]
+Filename: bible-verses-peace-shalom.jpg
+Placement: After Hebrew Shalom section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Hebrew word 'Shalom' in ancient biblical calligraphy, Dead Sea Scrolls style, historical biblical manuscript art, educational and authentic, warm parchment tones"
+Style: Biblical manuscript art, historical
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: bible-verses-peace-prayer.jpg
+Placement: After prayer application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Person in peaceful prayer with open Bible, morning light through window, contemplative moment, personal devotion, photorealistic, serene and intimate"
+Style: Photorealistic, devotional, peaceful
+Text on Image: NO
+
+---
+
+POST 35: Bible Verses Peace and Love
+Path: dist/articles/bible-verses-peace-and-love/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: bible-peace-love-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "100+ biblical verses about peace and love flowing as golden text from open Bible, heart symbol with cross, dove and olive branch, warm divine light, sacred Christian art. Text: 'Bible: Peace & Love - 100+ Verses' in elegant font"
+Style: Sacred art, flowing, warm
+Text on Image: YES - "Peace & Love: 100+ Verses"
+
+[IMAGE 2 - CONTENT]
+Filename: bible-peace-love-connection.jpg
+Placement: After peace-love connection section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Two intertwined circles labeled 'Peace' and 'Love' with biblical verses filling the intersection, Venn diagram style religious infographic, beautiful and educational"
+Style: Infographic, symbolic, educational
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: bible-peace-love-practice.jpg
+Placement: After practical application
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Christian community showing peace and love in action, serving others, acts of kindness, diverse congregation, modern church outreach, documentary photography, authentic service"
+Style: Documentary, service-oriented, authentic
+Text on Image: NO
+
+---
+
+POST 36: Israel in the Bible
+Path: dist/articles/israel-in-the-bible/index.html
+Status: ☐ Not Started
+Images Needed: 3
+
+[IMAGE 1 - TITLE/HERO]
+Filename: israel-bible-hero.jpg
+Placement: Hero section
+Aspect Ratio: 16:9 (1920×1080)
+Prompt: "Ancient Israel historical map overlaid with biblical timeline, Jerusalem temple, covenant promises in Hebrew and English, scholarly biblical archaeology style, educational and reverent. Text: 'Israel in the Bible' in ancient-inspired font"
+Style: Biblical archaeology, scholarly, historical
+Text on Image: YES - "Israel in the Bible"
+
+[IMAGE 2 - CONTENT]
+Filename: israel-bible-covenant.jpg
+Placement: After covenant section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Abraham looking at stars, God's covenant promise visualized, biblical artistic representation, ancient Middle East setting, spiritual and historical, classical biblical art style"
+Style: Biblical art, classical, spiritual
+Text on Image: NO
+
+[IMAGE 3 - CONTENT]
+Filename: israel-bible-peace.jpg
+Placement: After peace verses section
+Aspect Ratio: 16:9 (1200×675)
+Prompt: "Prophetic vision of peace for Israel, Isaiah's peaceful kingdom, artistic biblical illustration, hopeful and beautiful, symbolic religious art"
+Style: Prophetic art, symbolic, hopeful
+Text on Image: NO
+
+---
+
+POST 37: [Remaining Article - to be identified]
+Status: ☐ Not Started
+Images Needed: 3
+
+[Continue pattern for remaining post...]
+
+================================================================================
+IMPLEMENTATION PLAN & WORKFLOW
+================================================================================
+
+PHASE 1: SETUP (Day 1)
+☐ Install/verify Imagen 4 API access
+☐ Create image output directory structure: ~/proj/peace/images/
+  - /images/articles/
+  - /images/teachings/
+  - /images/heroes/ (for title images)
+  - /images/content/ (for content images)
+☐ Set up batch processing script
+☐ Create progress tracking system
+
+PHASE 2: IMAGE GENERATION (Days 2-5)
+☐ Process by category (parallel if possible)
+☐ Generate title images first (37 images)
+☐ Generate content images second (74 images)
+☐ Quality check each image
+☐ Optimize images (compress without quality loss)
+☐ Save images with proper naming convention
+
+PHASE 3: HTML INTEGRATION (Day 6)
+☐ Update HTML files with image references
+☐ Add proper alt text for accessibility
+☐ Ensure responsive image loading
+☐ Test all pages with images
+
+PHASE 4: OPTIMIZATION (Day 7)
+☐ Implement lazy loading
+☐ Add loading="lazy" attribute
+☐ Optimize image formats (WebP with fallbacks)
+☐ Test page load speeds
+☐ Final QA on all 37 pages
+
+PHASE 5: DEPLOYMENT
+☐ Deploy to production
+☐ Verify all images loading correctly
+☐ Test on multiple devices
+☐ Celebrate! 🎉
+
+================================================================================
+CHECKPOINT SYSTEM FOR CRASH RECOVERY
+================================================================================
+
+Progress will be saved in: ~/proj/peace/IMAGE_GENERATION_PROGRESS.json
+
+JSON Structure:
+{
+  "last_updated": "2025-01-20T10:30:00Z",
+  "total_posts": 37,
+  "total_images": 111,
+  "completed_images": 0,
+  "current_category": "buddhism",
+  "current_post": "four-noble-truths",
+  "completed_posts": [],
+  "failed_images": [],
+  "next_action": "Generate title image for four-noble-truths"
+}
+
+To resume after crash:
+1. Read IMAGE_GENERATION_PROGRESS.json
+2. Check "current_post" and "next_action"
+3. Continue from that point
+4. Update progress file after each image
+
+================================================================================
+IMAGE NAMING CONVENTION
+================================================================================
+
+Format: [category]-[post-slug]-[type].jpg
+
+Examples:
+- buddhism-four-noble-truths-hero.jpg
+- christianity-beatitudes-content1.jpg
+- islam-peace-teachings-content2.jpg
+
+All lowercase, hyphens for spaces, descriptive names.
+
+================================================================================
+QUALITY STANDARDS
+================================================================================
+
+✓ Resolution: 
+  - Title images: 1920×1080 (16:9)
+  - Content images: 1200×675 (16:9)
+  
+✓ Format: 
+  - Primary: JPG (optimized)
+  - Modern browsers: WebP with JPG fallback
+  
+✓ File size:
+  - Title images: < 300KB
+  - Content images: < 200KB
+  
+✓ Accessibility:
+  - Meaningful alt text for all images
+  - Descriptive filenames
+  - Proper ARIA labels where needed
+
+✓ Content accuracy:
+  - Religiously appropriate and respectful
+  - Culturally sensitive
+  - Historically accurate where applicable
+  - No offensive or controversial imagery
+
+================================================================================
+END OF MASTER PLAN
+================================================================================
+
+To execute this plan:
+1. Review and approve this plan
+2. Set up Imagen 4 API
+3. Run batch generation script
+4. Monitor progress via checkpoint file
+5. Update HTML as images complete
+6. Deploy when all images ready
+
+Total estimated time: 7 days
+Total estimated cost: [Calculate based on Imagen 4 pricing]
+Expected result: 40 beautifully illustrated blog pages! 🎨✨
+
+================================================================================

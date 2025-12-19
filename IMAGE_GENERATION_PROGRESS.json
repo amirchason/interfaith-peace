@@ -1,0 +1,62 @@
+{
+  "project": "Interfaith Peace Initiative - Blog Images",
+  "last_updated": "2025-01-20T03:00:00Z",
+  "status": "completed",
+  "total_posts": 36,
+  "total_images_needed": 108,
+  "completed_images": 108,
+  "current_category": "completed",
+  "current_post": "all_complete",
+  "current_image_index": 108,
+  "completed_posts": ["four-noble-truths", "metta-loving-kindness", "hatred-ceases-by-love", "beatitudes", "love-your-enemies", "turn-other-cheek", "blessed-are-the-peacemakers", "jesus-teachings-on-peace", "sermon-on-the-mount-peace", "ahimsa-nonviolence", "divine-in-all-beings", "gita-inner-peace", "hinduism-and-peace", "inclining-to-peace", "repel-evil-with-good", "reconciliation-believers", "peace-in-islam", "quran-peace-teachings", "quran-verses-about-peace", "seek-pursue-peace", "tikkun-olam", "swords-into-plowshares", "judaism-and-peace", "interfaith-peace-comparison", "jesus-in-islam", "jesus-quran-complete-list", "psychology-of-extremism", "religious-extremism-all-faiths", "who-are-the-moderates", "what-is-religious-extremism", "belief-spectrum-moderate-extremist", "how-extremists-recruit", "root-causes-religious-extremism", "bible-verses-about-peace", "bible-verses-peace-and-love", "israel-in-the-bible"],
+  "failed_images": [],
+  "next_action": "All images integrated into HTML! Ready to deploy.",
+  "integration_status": "completed",
+  "integration_date": "2025-01-20T04:00:00Z",
+  "posts_updated": 36,
+  "html_files_modified": 36,
+  "categories": {
+    "buddhism": {
+      "total_posts": 3,
+      "completed": 3,
+      "posts": ["four-noble-truths", "metta-loving-kindness", "hatred-ceases-by-love"]
+    },
+    "christianity": {
+      "total_posts": 6,
+      "completed": 6,
+      "posts": ["beatitudes", "love-your-enemies", "turn-other-cheek", "blessed-are-the-peacemakers", "jesus-teachings-on-peace", "sermon-on-the-mount-peace"]
+    },
+    "hinduism": {
+      "total_posts": 4,
+      "completed": 4,
+      "posts": ["ahimsa-nonviolence", "divine-in-all-beings", "gita-inner-peace", "hinduism-and-peace"]
+    },
+    "islam": {
+      "total_posts": 6,
+      "completed": 6,
+      "posts": ["inclining-to-peace", "repel-evil-with-good", "reconciliation-believers", "peace-in-islam", "quran-peace-teachings", "quran-verses-about-peace"]
+    },
+    "judaism": {
+      "total_posts": 4,
+      "completed": 4,
+      "posts": ["seek-pursue-peace", "tikkun-olam", "swords-into-plowshares", "judaism-and-peace"]
+    },
+    "interfaith": {
+      "total_posts": 3,
+      "completed": 3,
+      "posts": ["interfaith-peace-comparison", "jesus-in-islam", "jesus-quran-complete-list"]
+    },
+    "counter-extremism": {
+      "total_posts": 7,
+      "completed": 7,
+      "posts": ["psychology-of-extremism", "religious-extremism-all-faiths", "who-are-the-moderates", "what-is-religious-extremism", "belief-spectrum-moderate-extremist", "how-extremists-recruit", "root-causes-religious-extremism"]
+    },
+    "biblical": {
+      "total_posts": 3,
+      "completed": 3,
+      "posts": ["bible-verses-about-peace", "bible-verses-peace-and-love", "israel-in-the-bible"]
+    }
+  },
+  "image_directory": "~/proj/peace/images",
+  "backup_directory": "~/proj/peace/images_backup"
+}
