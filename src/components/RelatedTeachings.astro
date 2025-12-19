@@ -11,6 +11,8 @@ export interface Props {
 
 const { currentSlug, tags, religion, limit = 6 } = Astro.props;
 
+const base = import.meta.env.BASE_URL;
+
 // Get all teachings from the collection
 const allTeachings = await getCollection('teachings');
 
@@ -85,7 +87,7 @@ function getReligionName(religion: Religion): string {
           const baseSlug = teaching.slug.split('/').pop() || teaching.slug;
           return (
           <a
-            href={`/teachings/${teaching.data.religion}/${baseSlug}`}
+            href={`${base}/teachings/${teaching.data.religion}/${baseSlug}`}
             class="related-teaching-card group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
           >
             {/* Featured Image */}
@@ -143,7 +145,7 @@ function getReligionName(religion: Religion): string {
       {/* View All Link */}
       <div class="text-center mt-10">
         <a
-          href="/teachings"
+          href={`${base}/teachings`}
           class="inline-block px-6 py-3 bg-interfaith text-white rounded-lg font-semibold hover:bg-interfaith-dark transition-colors"
         >
           Explore All Teachings →

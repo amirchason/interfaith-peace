@@ -7,7 +7,8 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://peace.org',
+  site: 'https://amirchason.github.io',
+  base: '/interfaith-peace',
   integrations: [
     mdx(),
     react(),

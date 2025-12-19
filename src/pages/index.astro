@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const stats = [
   { number: '5', label: 'Major Religions', suffix: '+' },
   { number: '100', label: 'Peace Teachings', suffix: '+' },
@@ -94,13 +96,13 @@ const religions = [
 
       <!-- CTA Buttons -->
       <div class="cta-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="/teachings" class="btn btn-primary group">
+        <a href={`${base}/teachings`} class="btn btn-primary group">
           <span>Explore Teachings</span>
           <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
-        <a href="/articles" class="btn btn-secondary group">
+        <a href={`${base}/articles`} class="btn btn-secondary group">
           <span>Read Research</span>
           <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -227,13 +229,13 @@ const religions = [
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-        <a href="/teachings" class="btn btn-white group">
+        <a href={`${base}/teachings`} class="btn btn-white group">
           <span>Start Exploring</span>
           <svg class="w-5 h-5 ml-2 transform group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
-        <a href="/articles" class="btn btn-outline-white group">
+        <a href={`${base}/articles`} class="btn btn-outline-white group">
           <span>Read Research</span>
           <svg class="w-5 h-5 ml-2 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
