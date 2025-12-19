@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 // Get all articles
 const allArticles = await getCollection('articles');
 
@@ -103,7 +105,7 @@ const categoryColors: Record<string, string> = {
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categoryArticles.map(article => (
               <article class="article-card bg-background-primary rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <a href={`/articles/${article.slug}`} class="block">
+                <a href={`${base}/articles/${article.slug}/`} class="block">
                   <!-- Article Image -->
                   {article.data.image && (
                     <div class="article-image aspect-video overflow-hidden">

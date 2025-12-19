@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { Religion } from '../../types';
 
+const base = import.meta.env.BASE_URL;
+
 // Get all teachings
 const allTeachings = await getCollection('teachings');
 
@@ -158,7 +160,7 @@ const meta = {
             data-date={teaching.data.publishedDate.getTime()}
           >
             <a
-              href={`/teachings/${teaching.data.religion}/${baseSlug}`}
+              href={`${base}/teachings/${teaching.data.religion}/${baseSlug}/`}
               class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full group"
             >
               {/* Featured Image */}
