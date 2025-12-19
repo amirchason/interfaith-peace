@@ -16,21 +16,24 @@ const features = [
     title: 'Sacred Teachings',
     description: 'Explore peace teachings from Christianity, Islam, Hinduism, Buddhism, and Judaism',
     color: 'from-blue-500 to-purple-600',
-    image: '/images/homepage/feature-teachings.png'
+    link: `${base}/teachings`,
+    linkText: 'Browse Teachings'
   },
   {
     icon: '🤝',
     title: 'Interfaith Dialogue',
     description: 'Build bridges between faiths through understanding and shared commitment to peace',
     color: 'from-green-500 to-teal-600',
-    image: '/images/homepage/feature-community.png'
+    link: `${base}/teachings`,
+    linkText: 'Explore Dialogue'
   },
   {
     icon: '🕊️',
     title: 'Counter-Extremism',
     description: 'Evidence-based research empowering moderate voices across all religious traditions',
     color: 'from-orange-500 to-red-600',
-    image: '/images/homepage/feature-peace-symbol.png'
+    link: `${base}/articles`,
+    linkText: 'Read Research'
   },
 ];
 
@@ -189,8 +192,8 @@ const religions = [
                 <p class="text-gray-600 mb-6 leading-relaxed">
                   {feature.description}
                 </p>
-                <a href="#" class="inline-flex items-center text-gradient font-semibold group-hover:gap-4 transition-all">
-                  Learn More
+                <a href={feature.link} class="inline-flex items-center text-gradient font-semibold group-hover:gap-4 transition-all">
+                  {feature.linkText}
                   <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
